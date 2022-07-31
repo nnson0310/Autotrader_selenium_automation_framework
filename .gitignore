@@ -1,0 +1,7 @@
+### Maven ###
+.idea/
+target/
+test-output/
+browserLogs/
+extentReport/
+scriptLogs/
