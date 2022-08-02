@@ -1,0 +1,1 @@
+## Selenium 4 (Java) + Junit 5 automation framework for autotrader framework
