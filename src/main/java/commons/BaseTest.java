@@ -31,14 +31,9 @@ public class BaseTest {
         if (browserName == null) {
             browserName = "firefox";
         }
-
-        System.out.println(environmentName);
-        System.out.println(url);
-
         switch(environmentName.toLowerCase()) {
             case "local":
                 driver = new LocalEnvFactory(browserName).initBrowserDriver();
-                System.out.println(driver);
                 break;
             case "grid":
                 driver = new GridEnvFactory(browserName, ipAddress, port).initBrowserDriver();

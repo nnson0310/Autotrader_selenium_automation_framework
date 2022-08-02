@@ -5,3 +5,4 @@ test-output/
 browserLogs/
 extentReport/
 scriptLogs/
+log4j2/
