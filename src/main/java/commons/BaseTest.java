@@ -1,5 +1,8 @@
 package commons;
 
+import env_factory.CloudEnvFactory;
+import env_factory.GridEnvFactory;
+import env_factory.LocalEnvFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +18,35 @@ public class BaseTest {
         log = LogFactory.getLog(getClass());
     }
 
-    public WebDriver getBrowserDriver(String url) {
+    protected WebDriver getBrowserDriver(
+            String url,
+            String environmentName,
+            String browserName,
+            String browserVersion,
+            String ipAddress,
+            String port,
+            String os,
+            String osVersion
+    ) {
+        if (browserName == null) {
+            browserName = "firefox";
+        }
+
+        System.out.println(environmentName);
+        System.out.println(url);
+
+        switch(environmentName.toLowerCase()) {
+            case "local":
+                driver = new LocalEnvFactory(browserName).initBrowserDriver();
+                System.out.println(driver);
+                break;
+            case "grid":
+                driver = new GridEnvFactory(browserName, ipAddress, port).initBrowserDriver();
+                break;
+            default:
+                driver = new CloudEnvFactory(browserName, browserVersion, os, osVersion).initBrowserDriver();
+        }
+
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalConstants.getGlobalConstants().getLongTimeout()));
         driver.manage().window().maximize();
         driver.get(url);
@@ -27,7 +58,7 @@ public class BaseTest {
      * Close browser and kill all running process of browser driver
      * @author Son
      */
-    public void closeBrowserAndKillProcess() {
+    protected void closeBrowserAndKillProcess() {
         String cmd = "";
         try {
             String osName = System.getProperty("os.name").toLowerCase();

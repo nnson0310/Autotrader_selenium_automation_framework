@@ -42,7 +42,6 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${junit.version}</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -91,6 +90,16 @@
     </dependencies>
     <!-- Compiler/ Run Test -->
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/project.properties</include>
+                </includes>
+            </resource>
+        </resources>
+
         <plugins>
             <!-- Compiler -->
             <plugin>

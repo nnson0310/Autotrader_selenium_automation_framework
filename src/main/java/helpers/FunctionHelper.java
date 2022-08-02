@@ -8,15 +8,20 @@ import org.joda.time.DateTimeZone;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import java.io.*;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Properties;
 import java.util.Random;
 
 public final class FunctionHelper {
 
     private FunctionHelper() {
-
     }
 
     public static int generateRandomNumber() {
@@ -68,42 +73,48 @@ public final class FunctionHelper {
     }
 
     /**
-     * Get width of product review rating element
-     * @param cssStyleValue a string contains all of css style (ex: width: 80%; height: 70px;...)
-     * @return width value of element (ex: 80% -> return 80)
+     * Read .properties file's content
+     *
+     * @param fileName
+     * @return instance of Properties class which can get property value by getProperty() method
      */
-    public static int getProductReviewRatingByWidthValue(String cssStyleValue) {
-        String cssStyleParts[] = cssStyleValue.split(";");
-        String widthValue = "0";
-        for(String cssStylePart : cssStyleParts) {
-            cssStylePart.contains("width");
-            widthValue = cssStylePart.replaceAll("[^0-9]", "");
+    public static Properties readPropertiesFile(String fileName) {
+        Properties properties = new Properties();
+        InputStream inputStream = null;
+        try {
+            ClassLoader classLoader = ClassLoader.getSystemClassLoader();
+            inputStream = classLoader.getResourceAsStream(fileName);
+
+            // load properties from file
+            properties.load(inputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        return Integer.valueOf(widthValue);
-    }
-
-    public static String getProductPriceByText(String productPrice) {
-        return productPrice.replace(".00", "").replaceAll("[$,]","");
-    }
-
-    public static String getOnlyCharacterFromString(String str) {
-        return str.replaceAll("[^A-Za-z]+", "");
+        return properties;
     }
 
     /**
-     * Delete all files in specific folder
-     * @param folder instance of File
+     * Check if the all strings in a List contains a specific substring
+     *
+     * @param subString  a subString to compare
+     * @param stringList a List Collection of strings
+     * @return true if all string in List contains substring, otherwise return false
      */
-    public static void deleteAllFilesInFolder(File folder) {
-        for(File file: folder.listFiles()) {
-            if(!file.isDirectory()) {
-                file.delete();
-            }
-        }
+    public static boolean hasMatchSubstring(String subString, List<String> stringList) {
+        return stringList.stream().map(String::toLowerCase).allMatch(str -> str.contains(subString));
     }
 
     /**
      * Read content from pdf file
+     *
      * @param pathToFile relative path to pdf file
      * @return pdf content
      */
@@ -124,6 +135,26 @@ public final class FunctionHelper {
         return pdfText;
     }
 
+    /**
+     * Delete all files in specific folder
+     *
+     * @param folder instance of File
+     */
+    public static void deleteAllFilesInFolder(File folder) {
+        for (File file : folder.listFiles()) {
+            if (!file.isDirectory()) {
+                file.delete();
+            }
+        }
+    }
+
+    /**
+     * Take screenshot for reports
+     *
+     * @param driver
+     * @return content of file
+     * @throws IOException
+     */
     public static byte[] getByteScreenshot(WebDriver driver) throws IOException {
         File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         byte[] fileContent = FileUtils.readFileToByteArray(src);
