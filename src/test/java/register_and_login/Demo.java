@@ -2,6 +2,8 @@ package register_and_login;
 
 import commons.BaseTest;
 import data.Environment;
+import helpers.LoggerHelper;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +15,7 @@ import parameter_resolver.EnvironmentParameterResolver;
 public class Demo extends BaseTest {
 
     WebDriver driver;
+    Logger log;
 
     @BeforeAll
     public void beforeAll(Environment environment) {
@@ -26,15 +29,18 @@ public class Demo extends BaseTest {
                 environment.getOs(),
                 environment.getOsVersion()
         );
+        log = LoggerHelper.getLogger(Demo.class);
     }
 
     @Test
     public void TC_01() {
+        log.info("Okir");
         Assertions.assertEquals("123", "123");
     }
 
     @Test
     public void TC_02() {
+        log.error("Haha");
         Assertions.assertEquals("567", "567");
     }
 

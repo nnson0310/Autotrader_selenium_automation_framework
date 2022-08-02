@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Properties>
+        <Property name="baseDir">log4j2</Property>
+        <Property name="fileName">app</Property>
+    </Properties>
+    <Appenders>
+        <!-- Console appender configuration -->
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</Pattern>
+            </PatternLayout>
+        </Console>
+        <!-- File appender configuration -->
+        <File name="file" fileName="${baseDir}/${fileName}.log">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</Pattern>
+            </PatternLayout>
+        </File>
+        <RollingFile name="rolling_file" fileName="${baseDir}/${fileName}-%d{yyyy-MM-dd-HH}-%i.log"
+                     filePattern="${baseDir}/$${date:yyyy-MM}/${fileName}-%d{yyyy-MM-dd-HH}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <!--                Create new log file every one hour-->
+                <TimeBasedTriggeringPolicy interval="5" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="${baseDir}/" maxDepth="1">
+                    <IfFileName glob="${fileName}.log.gz"/>
+                    <!--                    <IfLastModified age="P60D"/>-->
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <!-- Root logger referring to console appender -->
+        <Root level="info" additivity="false">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="file"/>
+            <!--            <AppenderRef ref="rolling_file"/>-->
+        </Root>
+    </Loggers>
+</Configuration>
