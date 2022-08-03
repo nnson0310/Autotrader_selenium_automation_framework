@@ -13,6 +13,8 @@ public class FirefoxDriverFactory implements BrowserDriverFactory {
 
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setAcceptInsecureCerts(true);
+        // disable browser logs
+        System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
 
         return new FirefoxDriver(firefoxOptions);
     }
