@@ -9,10 +9,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -141,8 +140,10 @@ public final class FunctionHelper {
      * @param folder instance of File
      */
     public static void deleteAllFilesInFolder(File folder) {
+        System.out.println("OKIE");
         for (File file : folder.listFiles()) {
             if (!file.isDirectory()) {
+                System.out.println("OKIE 2");
                 file.delete();
             }
         }
@@ -159,5 +160,28 @@ public final class FunctionHelper {
         File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         byte[] fileContent = FileUtils.readFileToByteArray(src);
         return fileContent;
+    }
+
+    /**
+     * Clear a file's content
+     *
+     * @param pathToFile
+     */
+    public static void clearFileContent(String pathToFile) {
+        BufferedWriter writer = null;
+        try {
+            writer = Files.newBufferedWriter(Paths.get(pathToFile));
+            writer.write("");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (writer != null) {
+                try {
+                    writer.flush();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }

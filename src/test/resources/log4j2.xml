@@ -3,6 +3,7 @@
     <Properties>
         <Property name="baseDir">log4j2</Property>
         <Property name="fileName">app</Property>
+        <Property name="rollingFileName">app-info</Property>
     </Properties>
     <Appenders>
         <!-- Console appender configuration -->
@@ -17,30 +18,30 @@
                 <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</Pattern>
             </PatternLayout>
         </File>
-        <RollingFile name="rolling_file" fileName="${baseDir}/${fileName}-%d{yyyy-MM-dd-HH}-%i.log"
-                     filePattern="${baseDir}/$${date:yyyy-MM}/${fileName}-%d{yyyy-MM-dd-HH}-%i.log.gz">
-            <PatternLayout>
-                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</Pattern>
-            </PatternLayout>
-            <Policies>
-                <!--                Create new log file every one hour-->
-                <TimeBasedTriggeringPolicy interval="5" modulate="true"/>
-                <SizeBasedTriggeringPolicy size="10 MB"/>
-            </Policies>
-            <DefaultRolloverStrategy>
-                <Delete basePath="${baseDir}/" maxDepth="1">
-                    <IfFileName glob="${fileName}.log.gz"/>
-                    <!--                    <IfLastModified age="P60D"/>-->
-                </Delete>
-            </DefaultRolloverStrategy>
-        </RollingFile>
+<!--        <RollingFile name="rolling_file" fileName="${baseDir}/${rollingFileName}.log"-->
+<!--                     filePattern="${baseDir}/$${date:yyyy-MM}/${rollingFileName}-%d{yyyy-MM-dd-HH}-%i.log.gz">-->
+<!--            <PatternLayout>-->
+<!--                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</Pattern>-->
+<!--            </PatternLayout>-->
+<!--            <Policies>-->
+<!--                &lt;!&ndash;                Create new log file every one hour&ndash;&gt;-->
+<!--                <TimeBasedTriggeringPolicy interval="5" modulate="true"/>-->
+<!--                <SizeBasedTriggeringPolicy size="10 MB"/>-->
+<!--            </Policies>-->
+<!--            <DefaultRolloverStrategy>-->
+<!--                <Delete basePath="${baseDir}/" maxDepth="1">-->
+<!--                    <IfFileName glob="${fileName}.log.gz"/>-->
+<!--                    &lt;!&ndash;                    <IfLastModified age="P60D"/>&ndash;&gt;-->
+<!--                </Delete>-->
+<!--            </DefaultRolloverStrategy>-->
+<!--        </RollingFile>-->
     </Appenders>
     <Loggers>
         <!-- Root logger referring to console appender -->
         <Root level="info" additivity="false">
             <AppenderRef ref="console"/>
             <AppenderRef ref="file"/>
-            <!--            <AppenderRef ref="rolling_file"/>-->
+<!--            <AppenderRef ref="rolling_file"/>-->
         </Root>
     </Loggers>
 </Configuration>
