@@ -126,6 +126,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M7</version>
                 <configuration>
+                    <properties>
+                        <configurationParameters>
+                            junit.platform.reporting.open.xml.enabled = true
+                            junit.platform.reporting.output.dir = ${project.build.directory}/surefire-reports
+                        </configurationParameters>
+                    </properties>
                     <includes>
                         <include>**/register_and_login.Demo.java</include>
                     </includes>
