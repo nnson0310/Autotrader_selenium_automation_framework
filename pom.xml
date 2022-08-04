@@ -46,6 +46,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.junit-pioneer</groupId>
+            <artifactId>junit-pioneer</artifactId>
+            <version>1.7.1</version>
+        </dependency>
+
+        <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
@@ -139,7 +145,7 @@
                         </configurationParameters>
                     </properties>
                     <includes>
-                        <include>**/register_and_login.Demo.java</include>
+                        <include>**/login_and_signup.Signup.java</include>
                     </includes>
                     <!-- Argument -->
                     <argLine>

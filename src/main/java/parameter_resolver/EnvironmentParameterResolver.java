@@ -1,7 +1,7 @@
 package parameter_resolver;
 
 import commons.GlobalConstants;
-import data.Environment;
+import data_resolver.Environment;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.api.extension.ParameterResolutionException;
