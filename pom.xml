@@ -145,7 +145,7 @@
                         </configurationParameters>
                     </properties>
                     <includes>
-                        <include>**/login_and_signup.Signup.java</include>
+                        <include>**/login_and_signup.Login.java</include>
                     </includes>
                     <!-- Argument -->
                     <argLine>
