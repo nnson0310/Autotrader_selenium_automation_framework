@@ -1,4 +1,4 @@
-package data;
+package data_resolver;
 
 import lombok.Getter;
 
