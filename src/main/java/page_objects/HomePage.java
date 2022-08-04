@@ -50,4 +50,19 @@ public class HomePage extends BasePage {
         waitForElementVisible(driver, HomePageUI.USERNAME_HEADER_LABEL_DIV, username);
         return isElementDisplayed(driver, HomePageUI.USERNAME_HEADER_LABEL_DIV, username);
     }
+
+    public void clickToLoginButton(WebDriver driver) {
+        waitForElementClickable(driver, HomePageUI.LOGIN_BUTTON);
+        clickToElement(driver, HomePageUI.LOGIN_BUTTON);
+    }
+
+    public boolean isValidationErrorMessageDisplayed(WebDriver driver, String message) {
+        waitForElementVisible(driver, HomePageUI.VALIDATION_ERROR_LABEL_DIV, message);
+        return isElementDisplayed(driver, HomePageUI.VALIDATION_ERROR_LABEL_DIV, message);
+    }
+
+    public boolean isLoginErrorMessageDisplayed(WebDriver driver, String message) {
+        waitForElementVisible(driver, HomePageUI.LOGIN_ERROR_LABEL_SPAN, message);
+        return isElementDisplayed(driver, HomePageUI.LOGIN_ERROR_LABEL_SPAN, message);
+    }
 }

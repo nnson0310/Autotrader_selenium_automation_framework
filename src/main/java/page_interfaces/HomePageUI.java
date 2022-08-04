@@ -9,4 +9,7 @@ public interface HomePageUI {
     String LAST_NAME_TEXTBOX = "css=input[name='last_name']";
     String SIGNUP_BUTTON = "css=button[aria-label='Sign Up']";
     String USERNAME_HEADER_LABEL_DIV = "xpath=//ul[contains(@class, 'header--navList')]//div[@class='userName' and contains(text(), '%s')]";
+    String LOGIN_BUTTON = "css=button[aria-label='Log In']";
+    String VALIDATION_ERROR_LABEL_DIV = "xpath=//div[@role='alert']//div[text()='%s']";
+    String LOGIN_ERROR_LABEL_SPAN = "xpath=//div[contains(@class, 'auth0-global-message')]//span[text()='%s']";
 }
