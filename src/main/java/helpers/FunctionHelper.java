@@ -159,6 +159,16 @@ public final class FunctionHelper {
         return fileContent;
     }
 
+    public static void copyFileToAnotherDirectory(String original, String copied) {
+        File copiedFile = new File(copied);
+        File originalFile = new File(original);
+        try {
+            FileUtils.copyFile(originalFile, copiedFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Clear a file's content
      *
