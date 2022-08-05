@@ -17,12 +17,13 @@ public class StateExecutionListener implements TestExecutionListener {
         log = LoggerHelper.getLogger(StateExecutionListener.class);
     }
 
+    @Override
     public void testPlanExecutionStarted(TestPlan testPlan) {
         FunctionHelper.clearFileContent(GlobalConstants.getGlobalConstants().getPathLogFile());
         log.info("---Before test execution---");
-
     }
 
+    @Override
     public void testPlanExecutionFinished(TestPlan testPlan) {
         log.info("---After test execution---");
     }
