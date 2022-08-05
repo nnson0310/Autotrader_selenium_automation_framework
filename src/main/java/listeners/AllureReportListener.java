@@ -44,10 +44,6 @@ public class AllureReportListener implements TestExecutionListener {
         log.info("---Tests are skipped---");
     }
 
-    private void attachLog() {
-
-    }
-
     private void attachScreenshot(TestExecutionResult testExecutionResult) {
         if (testExecutionResult.getStatus().equals(TestExecutionResult.Status.FAILED)) {
             WebDriver driver = BaseTest.getWebDriver();
