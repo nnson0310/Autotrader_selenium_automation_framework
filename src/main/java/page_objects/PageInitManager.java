@@ -16,8 +16,4 @@ public class PageInitManager {
     public static HomePage getHomePage(WebDriver driver) {
         return new HomePage(driver);
     }
-
-    public static LoginPage getLoginPage(WebDriver driver) {
-        return new LoginPage(driver);
-    }
 }

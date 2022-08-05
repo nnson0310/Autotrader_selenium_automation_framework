@@ -10,12 +10,16 @@ import org.openqa.selenium.WebDriver;
 import java.time.Duration;
 
 public class BaseTest {
-    private WebDriver driver;
+    private static WebDriver driver;
 
     protected final Log log;
 
     public BaseTest() {
         log = LogFactory.getLog(getClass());
+    }
+
+    public static WebDriver getWebDriver() {
+        return driver;
     }
 
     protected WebDriver getBrowserDriver(

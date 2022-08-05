@@ -47,33 +47,10 @@ public class Login extends BaseTest {
         password = "123456";
     }
 
-    @ParameterizedTest
-    @MethodSource("parameter_test_data.Login#invalidEmail")
-    @DisplayName("TC_01_Login_With_Invalid_Email")
-    public void TC_01_Login_With_Invalid_Email(String email, String password, String message, TestInfo testInfo) {
-        String testMethod = testInfo.getTestMethod().get().getName();
-
-        log.info(testMethod + " - Start test");
-
-        log.info(testMethod + " - Step 01: Enter to email textbox with email = " + email);
-        homePage.enterToEmailTextbox(driver, email);
-
-        log.info(testMethod + " - Step 02: Enter to password textbox with password = " + password);
-        homePage.enterToPasswordTextbox(driver, password);
-
-        log.info(testMethod + " - Step 03: Click to Login Button");
-        homePage.clickToLoginButton(driver);
-
-        log.info(testMethod + " - Step 04: Verify that error message = " + message + " is displayed");
-        Assertions.assertTrue(homePage.isValidationErrorMessageDisplayed(driver, message));
-
-        log.info(testMethod + " - End test");
-    }
-
-//    @DisplayName("TC_02_Login_With_Invalid_Password")
 //    @ParameterizedTest
-//    @MethodSource("parameter_test_data.Login#invalidPassword")
-//    public void TC_02_Login_With_Invalid_Password(String email, String password, String message, TestInfo testInfo) {
+//    @MethodSource("parameter_test_data.Login#invalidEmail")
+//    @DisplayName("TC_01_Login_With_Invalid_Email")
+//    public void TC_01_Login_With_Invalid_Email(String email, String password, String message, TestInfo testInfo) {
 //        String testMethod = testInfo.getTestMethod().get().getName();
 //
 //        log.info(testMethod + " - Start test");
@@ -88,10 +65,33 @@ public class Login extends BaseTest {
 //        homePage.clickToLoginButton(driver);
 //
 //        log.info(testMethod + " - Step 04: Verify that error message = " + message + " is displayed");
-//        Assertions.assertTrue(homePage.isLoginErrorMessageDisplayed(driver, message));
+//        Assertions.assertTrue(homePage.isValidationErrorMessageDisplayed(driver, message));
 //
 //        log.info(testMethod + " - End test");
 //    }
+
+    @DisplayName("TC_02_Login_With_Invalid_Password")
+    @ParameterizedTest
+    @MethodSource("parameter_test_data.Login#invalidPassword")
+    public void TC_02_Login_With_Invalid_Password(String email, String password, String message, TestInfo testInfo) {
+        String testMethod = testInfo.getTestMethod().get().getName();
+
+        log.info(testMethod + " - Start test");
+
+        log.info(testMethod + " - Step 01: Enter to email textbox with email = " + email);
+        homePage.enterToEmailTextbox(driver, email);
+
+        log.info(testMethod + " - Step 02: Enter to password textbox with password = " + password);
+        homePage.enterToPasswordTextbox(driver, password);
+
+        log.info(testMethod + " - Step 03: Click to Login Button");
+        homePage.clickToLoginButton(driver);
+
+        log.info(testMethod + " - Step 04: Verify that error message = " + message + " is displayed");
+        Assertions.assertTrue(homePage.isLoginErrorMessageDisplayed(driver, message));
+
+        log.info(testMethod + " - End test");
+    }
 
     @AfterAll
     public void afterAll() {
