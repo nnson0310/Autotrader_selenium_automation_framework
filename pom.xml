@@ -17,6 +17,7 @@
         <junit.version>5.8.2</junit.version>
         <aspectj.version>1.9.8</aspectj.version>
         <log4j.version>2.18.0</log4j.version>
+        <allure.version>2.18.1</allure.version>
     </properties>
 
     <dependencies>
@@ -106,6 +107,12 @@
             <version>1.8.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+
     </dependencies>
     <!-- Compiler/ Run Test -->
     <build>
@@ -138,6 +145,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M7</version>
                 <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
                     <properties>
                         <configurationParameters>
                             junit.platform.reporting.open.xml.enabled = true
@@ -151,6 +159,21 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
+                    <systemProperties>
+                        <property>
+                            <name>allure.results.directory</name>
+                            <value>${project.build.directory}/allure-results</value>
+                        </property>
+                    </systemProperties>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.11.2</version>
+                <configuration>
+                    <reportVersion>${allure.version}</reportVersion>
+                    <reportDirectory>${project.basedir}/allure-report</reportDirectory>
                 </configuration>
             </plugin>
         </plugins>
