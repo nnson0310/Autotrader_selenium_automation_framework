@@ -16,9 +16,9 @@ public class Login {
 
     public static Stream<Arguments> invalidPassword() {
         return Stream.of(
-                Arguments.of("Robert@gmail.com", "Robert1234", "Wrong email or password."),
-                Arguments.of("Robert@gmail.com", "123456", "Wrong email or password."),
-                Arguments.of("Robert@gmail.com", "$#@!&^123", "Wrong email or password.")
+                Arguments.of("DivaMonth@gmail.com", "Robert1234", "Wrong email or password."),
+                Arguments.of("Darala@gmail.com", "123456", "Wrong email or password."),
+                Arguments.of("Sanbert@gmail.com", "$#@!&^123", "Wrong email or password.")
         );
     }
 }

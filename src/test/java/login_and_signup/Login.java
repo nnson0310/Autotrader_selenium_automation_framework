@@ -70,28 +70,28 @@ public class Login extends BaseTest {
         log.info(testMethod + " - End test");
     }
 
-    @DisplayName("TC_02_Login_With_Invalid_Password")
-    @ParameterizedTest
-    @MethodSource("parameter_test_data.Login#invalidPassword")
-    public void TC_02_Login_With_Invalid_Password(String email, String password, String message, TestInfo testInfo) {
-        String testMethod = testInfo.getTestMethod().get().getName();
-
-        log.info(testMethod + " - Start test");
-
-        log.info(testMethod + " - Step 01: Enter to email textbox with email = " + email);
-        homePage.enterToEmailTextbox(driver, email);
-
-        log.info(testMethod + " - Step 02: Enter to password textbox with password = " + password);
-        homePage.enterToPasswordTextbox(driver, password);
-
-        log.info(testMethod + " - Step 03: Click to Login Button");
-        homePage.clickToLoginButton(driver);
-
-        log.info(testMethod + " - Step 04: Verify that error message = " + message + " is displayed");
-        Assertions.assertTrue(homePage.isLoginErrorMessageDisplayed(driver, message));
-
-        log.info(testMethod + " - End test");
-    }
+//    @DisplayName("TC_02_Login_With_Invalid_Password")
+//    @ParameterizedTest
+//    @MethodSource("parameter_test_data.Login#invalidPassword")
+//    public void TC_02_Login_With_Invalid_Password(String email, String password, String message, TestInfo testInfo) {
+//        String testMethod = testInfo.getTestMethod().get().getName();
+//
+//        log.info(testMethod + " - Start test");
+//
+//        log.info(testMethod + " - Step 01: Enter to email textbox with email = " + email);
+//        homePage.enterToEmailTextbox(driver, email);
+//
+//        log.info(testMethod + " - Step 02: Enter to password textbox with password = " + password);
+//        homePage.enterToPasswordTextbox(driver, password);
+//
+//        log.info(testMethod + " - Step 03: Click to Login Button");
+//        homePage.clickToLoginButton(driver);
+//
+//        log.info(testMethod + " - Step 04: Verify that error message = " + message + " is displayed");
+//        Assertions.assertTrue(homePage.isLoginErrorMessageDisplayed(driver, message));
+//
+//        log.info(testMethod + " - End test");
+//    }
 
     @AfterAll
     public void afterAll() {
