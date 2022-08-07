@@ -35,6 +35,7 @@ public class GlobalConstants {
     private final String javaVersion = System.getProperty("java.version");
 
     private final String pathLogFile = projectPath + File.separator + "log4j2" + File.separator + "app.log";
+    private final String pathToRecordVideo = projectPath + File.separator + "record-videos";
     private final String pathToMainResource =  Paths.get("src", "main", "resources").toFile().getAbsolutePath();
     private final String pathToTestResource = Paths.get("src", "test", "resources").toFile().getAbsolutePath();
     private final String pathToEnvironmentPropertyFile = pathToMainResource + File.separator + "environment.properties";

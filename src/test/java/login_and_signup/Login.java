@@ -3,6 +3,7 @@ package login_and_signup;
 import commons.BaseTest;
 import data_resolver.Environment;
 import helpers.LoggerHelper;
+import helpers.RecordVideoHelper;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;

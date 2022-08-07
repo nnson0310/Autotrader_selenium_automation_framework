@@ -137,10 +137,8 @@ public final class FunctionHelper {
      * @param folder instance of File
      */
     public static void deleteAllFilesInFolder(File folder) {
-        System.out.println("OKIE");
         for (File file : folder.listFiles()) {
             if (!file.isDirectory()) {
-                System.out.println("OKIE 2");
                 file.delete();
             }
         }
