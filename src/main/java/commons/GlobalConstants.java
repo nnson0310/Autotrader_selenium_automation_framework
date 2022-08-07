@@ -39,6 +39,7 @@ public class GlobalConstants {
     private final String pathToMainResource =  Paths.get("src", "main", "resources").toFile().getAbsolutePath();
     private final String pathToTestResource = Paths.get("src", "test", "resources").toFile().getAbsolutePath();
     private final String pathToEnvironmentPropertyFile = pathToMainResource + File.separator + "environment.properties";
+    private final String pathToBrowserStackVideo = projectPath + File.separator + "browser-stack-videos" + File.separator;
 
     private final String projectPropertyFileName = "project.properties";
     private final String projectVersion = getPropertyValue(projectPropertyFileName, "version");

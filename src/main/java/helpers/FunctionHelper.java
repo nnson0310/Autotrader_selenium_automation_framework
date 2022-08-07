@@ -1,5 +1,6 @@
 package helpers;
 
+import commons.GlobalConstants;
 import org.apache.commons.io.FileUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
@@ -13,7 +14,10 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
+import java.util.List;
+import java.util.Properties;
+import java.util.Random;
 
 public final class FunctionHelper {
 
@@ -188,5 +192,30 @@ public final class FunctionHelper {
                 }
             }
         }
+    }
+
+    /**
+     * Get environment properties defined in environment.properties file
+     *
+     * @return instance of Properties
+     */
+    public static Properties getEnvironmentProperties() {
+        Properties properties = new Properties();
+        BufferedInputStream bufferedInputStream = null;
+        try {
+            bufferedInputStream = new BufferedInputStream(new FileInputStream(GlobalConstants.getGlobalConstants().getPathToEnvironmentPropertyFile()));
+            properties.load(bufferedInputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (bufferedInputStream != null) {
+                try {
+                    bufferedInputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return properties;
     }
 }

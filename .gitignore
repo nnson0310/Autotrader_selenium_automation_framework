@@ -1,12 +1,10 @@
 ### Maven ###
 .idea/
 target/
-test-output/
-browserLogs/
-extentReport/
-scriptLogs/
-log4j2/
-allure-report/
-.allure/
-allure-results/
-record-videos/
+test-output/*
+browserLogs/*
+extentReport/*
+scriptLogs/*
+.allure/*
+allure-report/*
+allure-results/*

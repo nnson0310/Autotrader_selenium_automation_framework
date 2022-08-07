@@ -1,0 +1,21 @@
+2022-08-07 22:12:32 INFO  StateExecutionListener:35 - ---Before test execution---
+2022-08-07 22:12:57 INFO  Signup:44 - Pre-condition: Click to SignUp/Login button to open SignUp/Login popup
+2022-08-07 22:13:01 INFO  Signup:80 - TC_02_Login_With_Invalid_Password - Start test
+2022-08-07 22:13:01 INFO  Signup:82 - TC_02_Login_With_Invalid_Password - Step 01: Enter to email textbox with email = Zutan@gmail.com
+2022-08-07 22:13:05 INFO  Signup:85 - TC_02_Login_With_Invalid_Password - Step 02: Enter to password textbox with password = Robert1234
+2022-08-07 22:13:06 INFO  Signup:88 - TC_02_Login_With_Invalid_Password - Step 03: Click to Login Button
+2022-08-07 22:13:07 INFO  Signup:91 - TC_02_Login_With_Invalid_Password - Step 04: Verify that error message = Wrong email or password. is displayed
+2022-08-07 22:13:09 INFO  Signup:94 - TC_02_Login_With_Invalid_Password - End test
+2022-08-07 22:13:09 INFO  Signup:80 - TC_02_Login_With_Invalid_Password - Start test
+2022-08-07 22:13:09 INFO  Signup:82 - TC_02_Login_With_Invalid_Password - Step 01: Enter to email textbox with email = Satan@gmail.com
+2022-08-07 22:13:11 INFO  Signup:85 - TC_02_Login_With_Invalid_Password - Step 02: Enter to password textbox with password = 123456
+2022-08-07 22:13:12 INFO  Signup:88 - TC_02_Login_With_Invalid_Password - Step 03: Click to Login Button
+2022-08-07 22:13:13 INFO  Signup:91 - TC_02_Login_With_Invalid_Password - Step 04: Verify that error message = Wrong email or password. is displayed
+2022-08-07 22:13:14 INFO  Signup:94 - TC_02_Login_With_Invalid_Password - End test
+2022-08-07 22:13:14 INFO  Signup:80 - TC_02_Login_With_Invalid_Password - Start test
+2022-08-07 22:13:14 INFO  Signup:82 - TC_02_Login_With_Invalid_Password - Step 01: Enter to email textbox with email = Sanhunadxx@gmail.com
+2022-08-07 22:13:16 INFO  Signup:85 - TC_02_Login_With_Invalid_Password - Step 02: Enter to password textbox with password = $#@!&^123
+2022-08-07 22:13:17 INFO  Signup:88 - TC_02_Login_With_Invalid_Password - Step 03: Click to Login Button
+2022-08-07 22:13:19 INFO  Signup:91 - TC_02_Login_With_Invalid_Password - Step 04: Verify that error message = Wrong email or password. is displayed
+2022-08-07 22:13:20 INFO  Signup:94 - TC_02_Login_With_Invalid_Password - End test
+2022-08-07 22:13:22 INFO  StateExecutionListener:50 - ---After test execution---
