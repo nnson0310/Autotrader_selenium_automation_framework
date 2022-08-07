@@ -1,7 +1,6 @@
 package helpers;
 
 import com.github.javafaker.Faker;
-
 import java.util.Random;
 
 public class DataFaker {
@@ -31,15 +30,16 @@ public class DataFaker {
     public String generateEmail() {
         return "robert" + generateRandomNumber() + "@gmail.com";
     }
+
     public String generateFullName() {
-        return faker.name().fullName().replaceAll(specialCharRegex,"");
+        return faker.name().fullName().replaceAll(specialCharRegex, "");
     }
 
     public String generateFirstName() {
-        return faker.name().firstName().replaceAll(specialCharRegex,"");
+        return faker.name().firstName().replaceAll(specialCharRegex, "");
     }
 
     public String generateLastName() {
-        return faker.name().lastName().replaceAll(specialCharRegex,"");
+        return faker.name().lastName().replaceAll(specialCharRegex, "");
     }
 }

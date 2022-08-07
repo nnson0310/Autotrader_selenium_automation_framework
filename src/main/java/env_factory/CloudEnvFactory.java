@@ -35,7 +35,7 @@ public class CloudEnvFactory implements EnvFactory {
         browserstackOptions.put("osVersion", osVersion);
         browserstackOptions.put("projectName", GlobalConstants.getGlobalConstants().getProjectName());
         browserstackOptions.put("buildName", GlobalConstants.getGlobalConstants().getProjectVersion());
-        browserstackOptions.put("browserstack", browserstackOptions);
+        browserstackOptions.put("sessionName", "Run on " + GlobalConstants.getGlobalConstants().getOsName() + " and with browser " + browserName);
 
         capabilities.setCapability("bstack:options", browserstackOptions);
 

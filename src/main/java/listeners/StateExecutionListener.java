@@ -1,7 +1,9 @@
 package listeners;
 
+import api.BrowserStack;
 import com.google.auto.service.AutoService;
 import commons.GlobalConstants;
+import enums.Environment;
 import helpers.FunctionHelper;
 import helpers.LoggerHelper;
 import helpers.RecordVideoHelper;
@@ -18,7 +20,9 @@ import java.util.Objects;
 @AutoService(TestExecutionListener.class)
 public class StateExecutionListener implements TestExecutionListener {
 
-    private Logger log;
+    private final Logger log;
+    private final String environment = FunctionHelper.getEnvironmentProperties().getProperty("environment_name");
+    private boolean recordLocalVideo = true;
 
     public StateExecutionListener() {
         log = LoggerHelper.getLogger(StateExecutionListener.class);
@@ -30,10 +34,14 @@ public class StateExecutionListener implements TestExecutionListener {
         FunctionHelper.clearFileContent(GlobalConstants.getGlobalConstants().getPathLogFile());
         log.info("---Before test execution---");
 
-        //Record video
-        FunctionHelper.deleteAllFilesInFolder(new File(GlobalConstants.getGlobalConstants().getPathToRecordVideo()));
-        RecordVideoHelper.startRecord("Start record video");
-
+        Environment environmentName = Environment.valueOf(environment.toUpperCase());
+        if (environmentName == Environment.LOCAL) {
+            // Record video on local environment
+            FunctionHelper.deleteAllFilesInFolder(new File(GlobalConstants.getGlobalConstants().getPathToRecordVideo()));
+            RecordVideoHelper.startRecord("Start record video");
+        } else {
+            recordLocalVideo = false;
+        }
     }
 
     @SneakyThrows
@@ -42,7 +50,12 @@ public class StateExecutionListener implements TestExecutionListener {
         log.info("---After test execution---");
 
         //stop record video
-        RecordVideoHelper.stopRecord();
+        if (recordLocalVideo) {
+            RecordVideoHelper.stopRecord();
+        } else {
+            // Download record video on Browser Stack
+            BrowserStack.saveRecordVideo();
+        }
 
         //create environment.properties for Allure Reports
         String pathToTargetFolder = null;
