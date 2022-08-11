@@ -1,4 +1,4 @@
-package api;
+package api.browser_stack;
 
 import com.google.gson.annotations.SerializedName;
 

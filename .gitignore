@@ -6,5 +6,7 @@ browserLogs/*
 extentReport/*
 scriptLogs/*
 .allure/*
-allure-report/*
-allure-results/*
+allure-report/
+allure-results/
+browser-stack-videos/
+record-videos/

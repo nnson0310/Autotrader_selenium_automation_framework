@@ -40,6 +40,7 @@ public class GlobalConstants {
     private final String pathToTestResource = Paths.get("src", "test", "resources").toFile().getAbsolutePath();
     private final String pathToEnvironmentPropertyFile = pathToMainResource + File.separator + "environment.properties";
     private final String pathToBrowserStackVideo = projectPath + File.separator + "browser-stack-videos" + File.separator;
+    private final String pathToJsonTestData = pathToTestResource + File.separator + "test_data" + File.separator;
 
     private final String projectPropertyFileName = "project.properties";
     private final String projectVersion = getPropertyValue(projectPropertyFileName, "version");
@@ -48,5 +49,7 @@ public class GlobalConstants {
     private final String cloudAutomateKey = getPropertyValue(projectPropertyFileName, "cloud_automate_key");
 
     private final String browserStackUrl = "https://" + cloudUsername + ":" + cloudAutomateKey + "@hub-cloud.browserstack.com/wd/hub";
+
+    private final String pathToUploadImages = pathToTestResource + File.separator + "images" + File.separator + "upload" + File.separator;
 
 }

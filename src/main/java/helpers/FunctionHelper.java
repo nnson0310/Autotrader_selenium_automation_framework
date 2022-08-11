@@ -2,6 +2,7 @@ package helpers;
 
 import commons.GlobalConstants;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.joda.time.DateTime;
@@ -217,5 +218,15 @@ public final class FunctionHelper {
             }
         }
         return properties;
+    }
+
+    /**
+     * Get integer value of step indicator
+     *
+     * @param text
+     * @return integer value of step indicator
+     */
+    public static int getStepIndicator(String text) {
+        return Integer.parseInt(StringUtils.substringBefore(text, "/"));
     }
 }

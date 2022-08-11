@@ -1,6 +1,6 @@
 package listeners;
 
-import api.BrowserStack;
+import api.browser_stack.BrowserStack;
 import com.google.auto.service.AutoService;
 import commons.GlobalConstants;
 import enums.Environment;
@@ -53,11 +53,20 @@ public class StateExecutionListener implements TestExecutionListener {
         if (recordLocalVideo) {
             RecordVideoHelper.stopRecord();
         } else {
-            // Download record video on Browser Stack
-            BrowserStack.saveRecordVideo();
+            // delete all old videos in browser-stack-videos
+            FunctionHelper.deleteAllFilesInFolder(new File(GlobalConstants.getGlobalConstants().getPathToBrowserStackVideo()));
+
+            // Download new record video on Browser Stack
+            // You can choose between download only latest video
+            // or download all videos of latest build
+            // (refer to Browser Stack Session Api for more details)
+
+//             BrowserStack.saveAllRecordVideo();
+            BrowserStack.saveLatestRecordVideo();
         }
 
-        //create environment.properties for Allure Reports
+        // create environment.properties to apply
+        // environment information for Allure Reports
         String pathToTargetFolder = null;
         try {
             pathToTargetFolder = Paths.get(Objects.requireNonNull(StateExecutionListener.class.getResource("/")).toURI()).getParent().toString();

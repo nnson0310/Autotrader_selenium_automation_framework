@@ -138,6 +138,7 @@
         </dependency>
 
     </dependencies>
+
     <!-- Compiler/ Run Test -->
     <build>
         <resources>
@@ -169,6 +170,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M7</version>
                 <configuration>
+                    <groups>create_ad</groups>
                     <testFailureIgnore>true</testFailureIgnore>
                     <properties>
                         <configurationParameters>
@@ -177,7 +179,8 @@
                         </configurationParameters>
                     </properties>
                     <includes>
-                        <include>**/login_and_signup.Login.java</include>
+                        <include>**/</include>
+<!--                        <include>**/profile.EditProfile.java</include>-->
                     </includes>
                     <!-- Argument -->
                     <argLine>

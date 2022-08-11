@@ -1,0 +1,23 @@
+{
+  "registration_vin": {
+    "number_plate": "GF22WSN",
+    "vin": "4Y1SL65848Z411439"
+  },
+  "expired": "No",
+  "expiry_date": {
+    "month": "November",
+    "year": "2022"
+  },
+  "car_specifics": {
+    "asking_price": "1000000",
+    "odometer_reading": "120000",
+    "pickup_location_input": "Aarons Pass",
+    "pickup_location_select": "Aarons Pass 2850, NSW",
+    "exterior_colour": "red",
+    "interior_colour": "black"
+  },
+  "additional": {
+    "logbook": "Yes",
+    "set_keys": "2"
+  }
+}

@@ -9,7 +9,7 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junitpioneer.jupiter.RetryingTest;
 import org.openqa.selenium.WebDriver;
-import page_objects.HomePage;
+import page_objects.home.HomePage;
 import page_objects.PageInitManager;
 import parameter_resolver.EnvironmentParameterResolver;
 
@@ -38,7 +38,7 @@ public class Signup extends BaseTest {
                 environment.getOsVersion()
         );
         log = LoggerHelper.getLogger(Signup.class);
-        homePage = PageInitManager.getHomePage(driver);
+        homePage = PageInitManager.getPageInitManager().getHomePage(driver);
 
         //test data
         email = DataFaker.getDataFaker().generateEmail();
@@ -64,10 +64,10 @@ public class Signup extends BaseTest {
         homePage.enterToPasswordTextbox(driver, password);
 
         log.info("TC_01_Signup_With_Valid_Credentials - Step 05: Enter to first_name textbox with first name = " + firstName);
-        homePage.enterToFirstNameTextbox(driver, firstName);
+        homePage.enterToFirstNameTextboxInSignupForm(driver, firstName);
 
         log.info("TC_01_Signup_With_Valid_Credentials - Step 06: Enter to last_name textbox with last name = " + lastName);
-        homePage.enterToLastNameTextbox(driver, lastName);
+        homePage.enterToLastNameTextboxInSignupForm(driver, lastName);
 
         log.info("TC_01_Signup_With_Valid_Credentials - Step 07: Click to Signup button");
         homePage.clickToSignUpButton(driver);

@@ -1,21 +1,52 @@
-2022-08-07 22:12:32 INFO  StateExecutionListener:35 - ---Before test execution---
-2022-08-07 22:12:57 INFO  Signup:44 - Pre-condition: Click to SignUp/Login button to open SignUp/Login popup
-2022-08-07 22:13:01 INFO  Signup:80 - TC_02_Login_With_Invalid_Password - Start test
-2022-08-07 22:13:01 INFO  Signup:82 - TC_02_Login_With_Invalid_Password - Step 01: Enter to email textbox with email = Zutan@gmail.com
-2022-08-07 22:13:05 INFO  Signup:85 - TC_02_Login_With_Invalid_Password - Step 02: Enter to password textbox with password = Robert1234
-2022-08-07 22:13:06 INFO  Signup:88 - TC_02_Login_With_Invalid_Password - Step 03: Click to Login Button
-2022-08-07 22:13:07 INFO  Signup:91 - TC_02_Login_With_Invalid_Password - Step 04: Verify that error message = Wrong email or password. is displayed
-2022-08-07 22:13:09 INFO  Signup:94 - TC_02_Login_With_Invalid_Password - End test
-2022-08-07 22:13:09 INFO  Signup:80 - TC_02_Login_With_Invalid_Password - Start test
-2022-08-07 22:13:09 INFO  Signup:82 - TC_02_Login_With_Invalid_Password - Step 01: Enter to email textbox with email = Satan@gmail.com
-2022-08-07 22:13:11 INFO  Signup:85 - TC_02_Login_With_Invalid_Password - Step 02: Enter to password textbox with password = 123456
-2022-08-07 22:13:12 INFO  Signup:88 - TC_02_Login_With_Invalid_Password - Step 03: Click to Login Button
-2022-08-07 22:13:13 INFO  Signup:91 - TC_02_Login_With_Invalid_Password - Step 04: Verify that error message = Wrong email or password. is displayed
-2022-08-07 22:13:14 INFO  Signup:94 - TC_02_Login_With_Invalid_Password - End test
-2022-08-07 22:13:14 INFO  Signup:80 - TC_02_Login_With_Invalid_Password - Start test
-2022-08-07 22:13:14 INFO  Signup:82 - TC_02_Login_With_Invalid_Password - Step 01: Enter to email textbox with email = Sanhunadxx@gmail.com
-2022-08-07 22:13:16 INFO  Signup:85 - TC_02_Login_With_Invalid_Password - Step 02: Enter to password textbox with password = $#@!&^123
-2022-08-07 22:13:17 INFO  Signup:88 - TC_02_Login_With_Invalid_Password - Step 03: Click to Login Button
-2022-08-07 22:13:19 INFO  Signup:91 - TC_02_Login_With_Invalid_Password - Step 04: Verify that error message = Wrong email or password. is displayed
-2022-08-07 22:13:20 INFO  Signup:94 - TC_02_Login_With_Invalid_Password - End test
-2022-08-07 22:13:22 INFO  StateExecutionListener:50 - ---After test execution---
+2022-08-11 15:32:54 INFO  StateExecutionListener:35 - ---Before test execution---
+2022-08-11 15:33:08 INFO  LoginHelper:28 - Pre-condition - Login with valid credentials - Step 01: Click to SignUp/Login button to open SignUp/Login popup
+2022-08-11 15:33:09 INFO  LoginHelper:31 - Pre-condition - Login with valid credentials - Step 02: Enter to email textbox with email = yukawa123@gmail.com
+2022-08-11 15:33:10 INFO  LoginHelper:34 - Pre-condition - Login with valid credentials - Step 03: Enter to password textbox with password = Tomanyeuem123
+2022-08-11 15:33:10 INFO  LoginHelper:37 - Pre-condition - Login with valid credentials - Step 04: Click to Login button
+2022-08-11 15:33:11 INFO  LoginHelper:40 - Pre-condition - Login with valid credentials - Step 05: Verify that username = Nieves is displayed on header
+2022-08-11 15:33:12 INFO  CreateAd:109 - TC_01_Create_Ad_With_No_Number_Plate - Step 01: Click to 'Create my Free ad' button in header
+2022-08-11 15:33:13 INFO  CreateAd:112 - TC_01_Create_Ad_With_No_Number_Plate - Step 02: Click to 'No Number Plate' link
+2022-08-11 15:33:14 INFO  CreateAd:115 - TC_01_Create_Ad_With_No_Number_Plate - Step 03: Select make = BMW
+2022-08-11 15:33:15 INFO  CreateAd:118 - TC_01_Create_Ad_With_No_Number_Plate - Step 04: Select model = 220D
+2022-08-11 15:33:15 INFO  CreateAd:121 - TC_01_Create_Ad_With_No_Number_Plate - Step 05: Select year = 2019
+2022-08-11 15:33:16 INFO  CreateAd:124 - TC_01_Create_Ad_With_No_Number_Plate - Step 06: Select body type = Coupe
+2022-08-11 15:33:16 INFO  CreateAd:127 - TC_01_Create_Ad_With_No_Number_Plate - Step 07: Select transmission = Automatic
+2022-08-11 15:33:17 INFO  CreateAd:130 - TC_01_Create_Ad_With_No_Number_Plate - Step 08: Select fuel type = Diesel
+2022-08-11 15:33:17 INFO  CreateAd:133 - TC_01_Create_Ad_With_No_Number_Plate - Step 09: Select variant = M-Sport
+2022-08-11 15:33:18 INFO  CreateAd:136 - TC_01_Create_Ad_With_No_Number_Plate - Step 10: Select series = F22 MY16 - Coupe
+2022-08-11 15:33:19 INFO  CreateAd:139 - TC_01_Create_Ad_With_No_Number_Plate - Step 11: Click to 'Create your FREE ad' button
+2022-08-11 15:33:19 INFO  CreateAd:142 - TC_01_Create_Ad_With_No_Number_Plate - Step 12: Verify that car details is correct
+2022-08-11 15:33:20 INFO  CreateAd:152 - TC_01_Create_Ad_With_No_Number_Plate - Step 13: Enter number plate = GF22WSN
+2022-08-11 15:33:20 INFO  CreateAd:155 - TC_01_Create_Ad_With_No_Number_Plate - Step 14: Enter VIN = 4Y1SL65848Z411439
+2022-08-11 15:33:20 INFO  CreateAd:158 - TC_01_Create_Ad_With_No_Number_Plate - Step 15: Check to checkbox 'Is Your Registration Expired' = No
+2022-08-11 15:33:20 INFO  CreateAd:161 - TC_01_Create_Ad_With_No_Number_Plate - Step 16: Select expiry month = November
+2022-08-11 15:33:21 INFO  CreateAd:164 - TC_01_Create_Ad_With_No_Number_Plate - Step 17: Select expiry year = 2022
+2022-08-11 15:33:21 INFO  CreateAd:167 - TC_01_Create_Ad_With_No_Number_Plate - Step 18: Enter asking price = 1000000
+2022-08-11 15:33:21 INFO  CreateAd:170 - TC_01_Create_Ad_With_No_Number_Plate - Step 19: Enter odometer reading = 120000
+2022-08-11 15:33:21 INFO  CreateAd:173 - TC_01_Create_Ad_With_No_Number_Plate - Step 20: Enter location of car pickup = Aarons Pass 2850, NSW
+2022-08-11 15:33:22 INFO  CreateAd:176 - TC_01_Create_Ad_With_No_Number_Plate - Step 21: Enter exterior colour = red
+2022-08-11 15:33:22 INFO  CreateAd:179 - TC_01_Create_Ad_With_No_Number_Plate - Step 22: Enter interior colour = black
+2022-08-11 15:33:23 INFO  CreateAd:182 - TC_01_Create_Ad_With_No_Number_Plate - Step 23: Check to 'Will your car come with a logbook?' checkbox = Yes
+2022-08-11 15:33:23 INFO  CreateAd:185 - TC_01_Create_Ad_With_No_Number_Plate - Step 24: Select sets of keys = 2
+2022-08-11 15:33:23 INFO  CreateAd:188 - TC_01_Create_Ad_With_No_Number_Plate - Step 25: Click to 'Save and Continue' button
+2022-08-11 15:33:24 INFO  CreateAd:191 - TC_01_Create_Ad_With_No_Number_Plate - Step 26: Upload multi photos stored in upload folder
+2022-08-11 15:33:24 INFO  CreateAd:194 - TC_01_Create_Ad_With_No_Number_Plate - Step 27: Verify that all photos are uploaded successfully
+2022-08-11 15:33:38 INFO  CreateAd:197 - TC_01_Create_Ad_With_No_Number_Plate - Step 28: Click to 'Save And Continue' button
+2022-08-11 15:33:39 INFO  CreateAd:200 - TC_01_Create_Ad_With_No_Number_Plate - Step 29: Click to toggle 'Optional Extras'
+2022-08-11 15:33:39 INFO  CreateAd:203 - TC_01_Create_Ad_With_No_Number_Plate - Step 30: Click to radio button to choose optional extras = Active Steering, Metallic Paint, Premium Sound System, 
+2022-08-11 15:33:40 INFO  CreateAd:206 - TC_01_Create_Ad_With_No_Number_Plate - Step 31: Verify that number of clicked optional extras = 3
+2022-08-11 15:33:40 INFO  CreateAd:209 - TC_01_Create_Ad_With_No_Number_Plate - Step 32: Click to toggle 'Custom Modifications'
+2022-08-11 15:33:40 INFO  CreateAd:212 - TC_01_Create_Ad_With_No_Number_Plate - Step 33: Enter to textbox and add custom modifications = weather control, freely travel in sand, heavy rain durability, 
+2022-08-11 15:33:41 INFO  CreateAd:215 - TC_01_Create_Ad_With_No_Number_Plate - Step 34: Verify that number of added custom modifications = 3
+2022-08-11 15:33:41 INFO  CreateAd:218 - TC_01_Create_Ad_With_No_Number_Plate - Step 35: Click to 'Save and Continue' button
+2022-08-11 15:33:41 INFO  CreateAd:221 - TC_01_Create_Ad_With_No_Number_Plate - Step 36: Add description = When selling a car, the description can determine whether or not a buyer takes the next step in the purchasing process and comes down to the dealership for a closer look. Today, a compelling vehicle description is what initially sells the car. The 2019 Cox Automotive Car Buyer Journey Study found that buyers are increasingly making more decisions based on online research before visiting dealerships. As a result, buyers are visiting fewer dealerships but are more likely to buy once they test drive.
+2022-08-11 15:33:45 INFO  CreateAd:224 - TC_01_Create_Ad_With_No_Number_Plate - Step 37: Click to 'Save and Continue button
+2022-08-11 15:33:45 INFO  CreateAd:227 - TC_01_Create_Ad_With_No_Number_Plate - Step 38: Verify review vehicle title = Complete your FREE ad for a 2019 BMW 220D Coupe Automatic M-Sport F22 MY16 - Coupe
+2022-08-11 15:33:46 INFO  CreateAd:230 - TC_01_Create_Ad_With_No_Number_Plate - Step 38: Verify number of uploaded images = 2
+2022-08-11 15:33:46 INFO  CreateAd:233 - TC_01_Create_Ad_With_No_Number_Plate - Step 39: Click to 'View More Description' button
+2022-08-11 15:33:48 INFO  CreateAd:236 - TC_01_Create_Ad_With_No_Number_Plate - Step 40: Verify that description = 'When selling a car, the description can determine whether or not a buyer takes the next step in the purchasing process and comes down to the dealership for a closer look. Today, a compelling vehicle description is what initially sells the car. The 2019 Cox Automotive Car Buyer Journey Study found that buyers are increasingly making more decisions based on online research before visiting dealerships. As a result, buyers are visiting fewer dealerships but are more likely to buy once they test drive.'
+2022-08-11 15:33:48 INFO  CreateAd:239 - TC_01_Create_Ad_With_No_Number_Plate - Step 41: Click to toggle 'Optional Extras' collapse
+2022-08-11 15:33:48 INFO  CreateAd:242 - TC_01_Create_Ad_With_No_Number_Plate - Step 42: Verify that checked optional extras = Active Steering, Metallic Paint, Premium Sound System, 
+2022-08-11 15:33:49 INFO  CreateAd:245 - TC_01_Create_Ad_With_No_Number_Plate - Step 43: Click to toggle 'Custom Modifications' collapse
+2022-08-11 15:33:49 INFO  CreateAd:248 - TC_01_Create_Ad_With_No_Number_Plate - Step 44: Verify that added custom modifications = weather control, freely travel in sand, heavy rain durability, 
+2022-08-11 15:33:51 INFO  StateExecutionListener:50 - ---After test execution---

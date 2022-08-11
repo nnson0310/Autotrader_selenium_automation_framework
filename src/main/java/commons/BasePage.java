@@ -99,8 +99,31 @@ public abstract class BasePage {
     }
 
     protected void sendKeyToAlert(WebDriver driver, String str) {
-
         waitForAlertPresent(driver).sendKeys(str);
+    }
+
+    protected WebElement waitForPresentOfElement(WebDriver driver, String locator) {
+        explicitWait = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
+
+        return explicitWait.until(ExpectedConditions.presenceOfElementLocated(getByLocator(locator)));
+    }
+
+    protected WebElement waitForPresentOfElement(WebDriver driver, String locator, String... dynamicValues) {
+        explicitWait = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
+
+        return explicitWait.until(ExpectedConditions.presenceOfElementLocated(getByLocator(getDynamicXpath(locator, dynamicValues))));
+    }
+
+    protected List<WebElement> waitForPresentOfAllElements(WebDriver driver, String locator) {
+        explicitWait = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
+
+        return explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(locator)));
+    }
+
+    protected List<WebElement> waitForPresentOfAllElements(WebDriver driver, String locator, String... dynamicValues) {
+        explicitWait = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
+
+        return explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(getDynamicXpath(locator, dynamicValues))));
     }
 
     protected void switchWindowById(WebDriver driver, String currentWindowId) {
@@ -209,6 +232,14 @@ public abstract class BasePage {
 
     protected void sendKeyToElement(WebDriver driver, String locator, String value, String... dynamicValues) {
         getElement(driver, getDynamicXpath(locator, dynamicValues)).clear();
+        getElement(driver, getDynamicXpath(locator, dynamicValues)).sendKeys(value);
+    }
+
+    protected void sendKeyToUploadFile(WebDriver driver, String locator, String value) {
+        getElement(driver, locator).sendKeys(value);
+    }
+
+    protected void sendKeyToUploadFile(WebDriver driver, String locator, String value, String... dynamicValues) {
         getElement(driver, getDynamicXpath(locator, dynamicValues)).sendKeys(value);
     }
 
@@ -447,6 +478,16 @@ public abstract class BasePage {
         return (String) jsExecutor.executeScript("return document.documentElement.innerText;");
     }
 
+    protected String getElementInnerText(WebDriver driver, String locator) {
+        jsExecutor = (JavascriptExecutor) driver;
+        return (String) jsExecutor.executeScript("return arguments[0].innerText", getElement(driver, locator));
+    }
+
+    protected String getElementInnerText(WebDriver driver, String locator, String... dynamicValues) {
+        jsExecutor = (JavascriptExecutor) driver;
+        return (String) jsExecutor.executeScript("return arguments[0].innerText", getElement(driver, getDynamicXpath(locator, dynamicValues)));
+    }
+
     protected void scrollToBottomPage(WebDriver driver) {
         jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("window.scrollBy(0,document.body.scrollHeight)");
@@ -469,6 +510,16 @@ public abstract class BasePage {
     protected void clickToElementByJS(WebDriver driver, String locator, String... dynamicValues) {
         jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("arguments[0].click();", getElement(driver, getDynamicXpath(locator, dynamicValues)));
+    }
+
+    protected void clickToElementByAction(WebDriver driver, String locator) {
+        action = new Actions(driver);
+        action.moveToElement(getElement(driver, locator)).click().build().perform();
+    }
+
+    protected void clickToElementByAction(WebDriver driver, String locator, String... dynamicValues) {
+        action = new Actions(driver);
+        action.moveToElement(getElement(driver, getDynamicXpath(locator, dynamicValues))).click().build().perform();
     }
 
     protected void scrollToElement(WebDriver driver, String locator) {
@@ -529,6 +580,16 @@ public abstract class BasePage {
     protected boolean isImageLoaded(WebDriver driver, String locator) {
         jsExecutor = (JavascriptExecutor) driver;
         boolean status = (boolean) jsExecutor.executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0", getElement(driver, locator));
+        return status;
+    }
+
+    protected boolean areAllImagesUploaded(WebDriver driver, String locator) {
+        List<WebElement> elements = getElements(driver, locator);
+        jsExecutor = (JavascriptExecutor) driver;
+        boolean status = true;
+        for(WebElement element: elements) {
+            status = (boolean) jsExecutor.executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0", element);
+        }
         return status;
     }
 
