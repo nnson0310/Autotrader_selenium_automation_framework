@@ -1,6 +1,6 @@
 package page_interfaces;
 
-public interface HomePageUI {
+public interface CommonPageUI {
     String HEADER_LOGIN_BUTTON = "css=ul.header--navList-user div[data-cy='header-login-btn']";
     String AUTH_LOCK_SIGNUP_TAB = "xpath=//div[@class='auth0-lock-form']//a[text()='Sign Up']";
     String EMAIL_TEXTBOX = "css=input[name='email']";
@@ -12,4 +12,7 @@ public interface HomePageUI {
     String LOGIN_BUTTON = "css=button[aria-label='Log In']";
     String VALIDATION_ERROR_LABEL_DIV = "xpath=//div[@role='alert']//div[text()='%s']";
     String LOGIN_ERROR_LABEL_SPAN = "xpath=//div[contains(@class, 'auth0-global-message')]//span[text()='%s']";
+    String EDIT_PROFILE_HEADER_DROPDOWN_LINK = "xpath=//ul[contains(@class, 'header--navList')]//a[contains(text(), 'Edit Profile')]";
+    String CREATE_MY_FREE_AD_BUTTON = "css=a.startAdBtn div";
+    String DYNAMIC_TEXTBOX_BY_NAME_ATTRIBUTE = "xpath=//input[@name='%s']";
 }
