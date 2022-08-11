@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import helpers.FunctionHelper;
+
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,7 @@ public abstract class BasePage {
 
     private JavascriptExecutor jsExecutor;
 
-    private Actions action;
+    private Actions actions;
 
     private final long longTimeout = GlobalConstants.getGlobalConstants().getLongTimeout();
 
@@ -230,6 +231,11 @@ public abstract class BasePage {
         getElement(driver, locator).sendKeys(value);
     }
 
+    protected void sendKeyToElementByAction(WebDriver driver, String locator, String value) {
+        actions = new Actions(driver);
+        actions.moveToElement(getElement(driver, locator)).click().sendKeys(value).build().perform();
+    }
+
     protected void sendKeyToElement(WebDriver driver, String locator, String value, String... dynamicValues) {
         getElement(driver, getDynamicXpath(locator, dynamicValues)).clear();
         getElement(driver, getDynamicXpath(locator, dynamicValues)).sendKeys(value);
@@ -252,21 +258,21 @@ public abstract class BasePage {
     }
 
     public void pressEnterButton(WebDriver driver) {
-        action = new Actions(driver);
+        actions = new Actions(driver);
 
-        action.sendKeys(Keys.ENTER).perform();
+        actions.sendKeys(Keys.ENTER).perform();
     }
 
     public void pressTabButton(WebDriver driver) {
-        action = new Actions(driver);
+        actions = new Actions(driver);
 
-        action.sendKeys(Keys.TAB).perform();
+        actions.sendKeys(Keys.TAB).perform();
     }
 
     public void pressSpaceButton(WebDriver driver) {
-        action = new Actions(driver);
+        actions = new Actions(driver);
 
-        action.sendKeys(Keys.SPACE).perform();
+        actions.sendKeys(Keys.SPACE).perform();
     }
 
     protected void selectItemInDropDown(WebDriver driver, String locator, String text) {
@@ -464,13 +470,13 @@ public abstract class BasePage {
     }
 
     protected void hoverToElement(WebDriver driver, String locator) {
-        action = new Actions(driver);
-        action.moveToElement(getElement(driver, locator)).perform();
+        actions = new Actions(driver);
+        actions.moveToElement(getElement(driver, locator)).perform();
     }
 
     protected void hoverToElement(WebDriver driver, String locator, String... dynamicValues) {
-        action = new Actions(driver);
-        action.moveToElement(getElement(driver, getDynamicXpath(locator, dynamicValues))).perform();
+        actions = new Actions(driver);
+        actions.moveToElement(getElement(driver, getDynamicXpath(locator, dynamicValues))).perform();
     }
 
     protected String getInnerText(WebDriver driver) {
@@ -513,13 +519,13 @@ public abstract class BasePage {
     }
 
     protected void clickToElementByAction(WebDriver driver, String locator) {
-        action = new Actions(driver);
-        action.moveToElement(getElement(driver, locator)).click().build().perform();
+        actions = new Actions(driver);
+        actions.moveToElement(getElement(driver, locator)).click().build().perform();
     }
 
     protected void clickToElementByAction(WebDriver driver, String locator, String... dynamicValues) {
-        action = new Actions(driver);
-        action.moveToElement(getElement(driver, getDynamicXpath(locator, dynamicValues))).click().build().perform();
+        actions = new Actions(driver);
+        actions.moveToElement(getElement(driver, getDynamicXpath(locator, dynamicValues))).click().build().perform();
     }
 
     protected void scrollToElement(WebDriver driver, String locator) {

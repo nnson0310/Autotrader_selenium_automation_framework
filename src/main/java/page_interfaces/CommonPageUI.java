@@ -15,4 +15,5 @@ public interface CommonPageUI {
     String EDIT_PROFILE_HEADER_DROPDOWN_LINK = "xpath=//ul[contains(@class, 'header--navList')]//a[contains(text(), 'Edit Profile')]";
     String CREATE_MY_FREE_AD_BUTTON = "css=a.startAdBtn div";
     String DYNAMIC_TEXTBOX_BY_NAME_ATTRIBUTE = "xpath=//input[@name='%s']";
+    String AUTOTRADER_LOGO = "css=div.header--banner svg.logo";
 }

@@ -103,4 +103,10 @@ public class CommonPage extends BasePage {
         waitForElementClickable(driver, CommonPageUI.DYNAMIC_TEXTBOX_BY_NAME_ATTRIBUTE, nameAttribute);
         sendKeyToElement(driver, CommonPageUI.DYNAMIC_TEXTBOX_BY_NAME_ATTRIBUTE, value, nameAttribute);
     }
+
+    @Step("Click to 'Autotrader' logo")
+    public void clickToAutotraderLogo(WebDriver driver) {
+        waitForElementClickable(driver, CommonPageUI.AUTOTRADER_LOGO);
+        clickToElement(driver, CommonPageUI.AUTOTRADER_LOGO);
+    }
 }

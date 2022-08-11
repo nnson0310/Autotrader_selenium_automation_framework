@@ -5,7 +5,6 @@ import commons.GlobalConstants;
 import data_resolver.Environment;
 import dynamic_field_name.sell_car.CarDetailsFieldName;
 import dynamic_field_name.sell_car.SelectCarFieldName;
-import helpers.FunctionHelper;
 import helpers.LoggerHelper;
 import helpers.ParseJsonHelper;
 import json_data.SelectCar;

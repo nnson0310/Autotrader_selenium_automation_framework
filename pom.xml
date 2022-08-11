@@ -170,7 +170,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M7</version>
                 <configuration>
-                    <groups>create_ad</groups>
+                    <groups>search_all</groups>
                     <testFailureIgnore>true</testFailureIgnore>
                     <properties>
                         <configurationParameters>

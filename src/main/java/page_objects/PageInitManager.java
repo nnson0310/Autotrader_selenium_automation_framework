@@ -1,6 +1,7 @@
 package page_objects;
 
 import org.openqa.selenium.WebDriver;
+import page_objects.for_sale.ForSalePage;
 import page_objects.home.HomePage;
 import page_objects.profile.EditProfilePage;
 import page_objects.sell_car.*;
@@ -50,5 +51,9 @@ public class PageInitManager {
 
     public SellReviewPage getSellReviewPage(WebDriver driver) {
         return new SellReviewPage(driver);
+    }
+
+    public ForSalePage getForSalePage(WebDriver driver) {
+        return new ForSalePage(driver);
     }
 }
