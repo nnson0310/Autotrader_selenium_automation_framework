@@ -1,4 +1,4 @@
-package dynamic_field_name.common;
+package dynamic_field_name;
 
 public interface FooterLinkFieldName {
     String dealers = "Dealers";

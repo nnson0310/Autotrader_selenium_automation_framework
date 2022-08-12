@@ -1,6 +1,7 @@
 package page_objects;
 
 import org.openqa.selenium.WebDriver;
+import page_objects.contact_us.ContactUsPage;
 import page_objects.for_sale.ForSalePage;
 import page_objects.home.HomePage;
 import page_objects.profile.EditProfilePage;
@@ -55,5 +56,9 @@ public class PageInitManager {
 
     public ForSalePage getForSalePage(WebDriver driver) {
         return new ForSalePage(driver);
+    }
+
+    public ContactUsPage getContactUsPage(WebDriver driver) {
+        return new ContactUsPage(driver);
     }
 }

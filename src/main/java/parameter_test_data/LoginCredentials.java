@@ -4,7 +4,7 @@ import org.junit.jupiter.params.provider.Arguments;
 
 import java.util.stream.Stream;
 
-public class Login {
+public class LoginCredentials {
 
     public static Stream<Arguments> invalidEmail() {
         return Stream.of(

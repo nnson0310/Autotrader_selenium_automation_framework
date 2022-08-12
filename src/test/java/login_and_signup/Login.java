@@ -43,7 +43,7 @@ public class Login extends BaseTest {
     }
 
     @ParameterizedTest
-    @MethodSource("parameter_test_data.Login#invalidEmail")
+    @MethodSource("parameter_test_data.LoginCredentials#invalidEmail")
     @DisplayName("TC_01_Login_With_Invalid_Email")
     public void TC_01_Login_With_Invalid_Email(String email, String password, String message, TestInfo testInfo) {
         String testMethod = testInfo.getTestMethod().get().getName();
@@ -65,9 +65,9 @@ public class Login extends BaseTest {
         log.info(testMethod + " - End test");
     }
 
-    @DisplayName("TC_02_Login_With_Invalid_Password")
     @ParameterizedTest
-    @MethodSource("parameter_test_data.Login#invalidPassword")
+    @MethodSource("parameter_test_data.LoginCredentials#invalidPassword")
+    @DisplayName("TC_02_Login_With_Invalid_Password")
     public void TC_02_Login_With_Invalid_Password(String email, String password, String message, TestInfo testInfo) {
         String testMethod = testInfo.getTestMethod().get().getName();
 

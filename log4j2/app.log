@@ -1,8 +1,9 @@
-2022-08-12 09:21:56 INFO  StateExecutionListener:35 - ---Before test execution---
-2022-08-12 09:22:15 INFO  FooterLink:47 - TC_01_Navigate_To_Dealers_Page - Step 01: Click to 'Dealers' link in footer
-2022-08-12 09:22:15 INFO  FooterLink:50 - TC_01_Navigate_To_Dealers_Page - Step 02: Switch to new tab and verify tab title = Autotrader Group
-2022-08-12 09:22:20 INFO  FooterLink:59 - TC_01_Navigate_To_CarsGuide_Page - Step 01: Click to 'CarsGuide' link in footer
-2022-08-12 09:22:21 INFO  FooterLink:62 - TC_01_Navigate_To_CarsGuide_Page - Step 02: Switch to new tab and verify tab title = CarsGuide: Car Reviews - New & Used Car Sales
-2022-08-12 09:22:26 INFO  FooterLink:71 - TC_01_Navigate_To_Gumtree_Page - Step 01: Click to 'Gumtree' link in footer
-2022-08-12 09:22:26 INFO  FooterLink:74 - TC_01_Navigate_To_Gumtree_Page - Step 02: Switch to new tab and verify tab title = Gumtree: Australia's Free Marketplace. Find a car, job, furniture & more
-2022-08-12 09:22:33 INFO  StateExecutionListener:50 - ---After test execution---
+2022-08-12 16:27:44 INFO  StateExecutionListener:35 - ---Before test execution---
+2022-08-12 16:27:57 INFO  ContactUs:51 - TC_01_Submit_Question_Success - Step 01: Click to 'Contact Us' link in footer
+2022-08-12 16:27:57 INFO  ContactUs:55 - TC_01_Submit_Question_Success - Step 02: Select enquiry type = Website issue, suggestion or comment
+2022-08-12 16:27:58 INFO  ContactUs:58 - TC_01_Submit_Question_Success - Step 03: Enter to name textbox with name = Isidra Okuneva
+2022-08-12 16:27:58 INFO  ContactUs:61 - TC_01_Submit_Question_Success - Step 04: Enter to email address textbox with email = robert21005@gmail.com
+2022-08-12 16:27:58 INFO  ContactUs:64 - TC_01_Submit_Question_Success - Step 05: Enter to message textarea with message = Modi dicta harum quod cupiditate. Rem porro accusamus. Ut vitae nihil tempore. Asperiores perspiciatis est totam.
+2022-08-12 16:27:58 INFO  ContactUs:67 - TC_01_Submit_Question_Success - Step 06: Click to 'Submit Questions' button
+2022-08-12 16:27:59 INFO  ContactUs:70 - TC_01_Submit_Question_Success - Step 07: Verify that success notification = 'Your enquiry was submitted successfully. We will get back to you as soon as possible.' is displayed
+2022-08-12 16:28:05 INFO  StateExecutionListener:50 - ---After test execution---

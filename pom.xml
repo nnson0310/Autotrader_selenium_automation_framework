@@ -170,7 +170,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M7</version>
                 <configuration>
-                    <groups>footer_link</groups>
+                    <groups>contact_us</groups>
                     <testFailureIgnore>true</testFailureIgnore>
                     <properties>
                         <configurationParameters>
