@@ -1,6 +1,8 @@
 package page_objects;
 
 import commons.BasePage;
+import commons.GlobalConstants;
+import helpers.FunctionHelper;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import page_interfaces.CommonPageUI;
@@ -108,5 +110,17 @@ public class CommonPage extends BasePage {
     public void clickToAutotraderLogo(WebDriver driver) {
         waitForElementClickable(driver, CommonPageUI.AUTOTRADER_LOGO);
         clickToElement(driver, CommonPageUI.AUTOTRADER_LOGO);
+    }
+
+    @Step("Click to footer link = {1}")
+    public void clickToFooterLink(WebDriver driver, String footerLink) {
+        waitForElementClickable(driver, CommonPageUI.DYNAMIC_FOOTER_LINK, footerLink);
+        scrollToElement(driver, CommonPageUI.DYNAMIC_FOOTER_LINK, footerLink);
+        clickToElement(driver, CommonPageUI.DYNAMIC_FOOTER_LINK, footerLink);
+    }
+
+    @Step("Switch to new tab and get page title")
+    public String getPageTitleOfNewTab(WebDriver driver) {
+        return super.getPageTitleOfNewTab(driver);
     }
 }
