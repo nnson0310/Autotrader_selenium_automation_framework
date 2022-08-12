@@ -8,4 +8,5 @@ scriptLogs/*
 .allure/*
 allure-report/
 allure-results/
-record-videos/Start record video*.avi
+record-videos/
+browser-stack-videos/

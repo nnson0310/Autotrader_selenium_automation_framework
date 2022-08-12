@@ -1,0 +1,40 @@
+[
+  {
+    "make": "Suzuki",
+    "model": "Sierra",
+    "year": "2000",
+    "dimension_title": "2000 Suzuki Sierra Car Dimensions",
+    "button_title": "2000 Suzuki Sierra for Sale",
+    "dimension_results": [
+      {
+        "variant": "Stockman LWB (4X4)",
+        "hxwxl": "1710mm x 1540mm x 4010mm",
+        "kerb_weight": "870kg"
+      },
+      {
+        "variant": "Stockman LWB (4X4)",
+        "hxwxl": "1760mm x 1595mm x 4110mm",
+        "kerb_weight": "870kg"
+      }
+    ]
+  },
+  {
+    "make": "Dodge",
+    "model": "Avenger",
+    "year": "2010",
+    "dimension_title": "2010 Dodge Avenger Car Dimensions",
+    "button_title": "2010 Dodge Avenger for Sale",
+    "dimension_results": [
+      {
+        "variant": "SXT",
+        "hxwxl": "1497mm x 1843mm x 4850mm",
+        "kerb_weight": "1615kg"
+      },
+      {
+        "variant": "SXT",
+        "hxwxl": "1497mm x 1843mm x 4850mm",
+        "kerb_weight": "1545kg"
+      }
+    ]
+  }
+]

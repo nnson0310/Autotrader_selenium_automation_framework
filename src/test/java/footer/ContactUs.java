@@ -4,7 +4,6 @@ import commons.BaseTest;
 import data_resolver.Environment;
 import dynamic_field_name.ContactUsFieldName;
 import dynamic_field_name.FooterLinkFieldName;
-import helpers.FunctionHelper;
 import helpers.LoggerHelper;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
