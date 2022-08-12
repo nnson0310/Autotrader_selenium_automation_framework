@@ -1,5 +1,6 @@
 package commons;
 
+import helpers.FunctionHelper;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
@@ -7,7 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import helpers.FunctionHelper;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -17,6 +17,7 @@ import java.util.Set;
 /**
  * Define all methods of selenium API to interact with browser
  * PageObject will extends from this class
+ *
  * @author Son
  */
 public abstract class BasePage {
@@ -37,7 +38,7 @@ public abstract class BasePage {
 
     protected void sleepInSecond(long seconds) {
         try {
-            Thread.sleep(seconds *  1000);
+            Thread.sleep(seconds * 1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -48,7 +49,7 @@ public abstract class BasePage {
     }
 
     public void setCookies(WebDriver driver, Set<Cookie> cookies) {
-        for(Cookie cookie : cookies) {
+        for (Cookie cookie : cookies) {
             driver.manage().addCookie(cookie);
         }
     }
@@ -138,6 +139,10 @@ public abstract class BasePage {
         }
     }
 
+    protected String getCurrentWindowId(WebDriver driver) {
+        return driver.getWindowHandle();
+    }
+
     protected void switchWindowByTitle(WebDriver driver, String tabTitle) {
         Set<String> allWindowIds = driver.getWindowHandles();
 
@@ -170,20 +175,15 @@ public abstract class BasePage {
 
         if (locator.startsWith("id=") || locator.startsWith("ID=") || locator.startsWith("Id=")) {
             by = By.id(getLocatorValue(locator));
-        }
-        else if (locator.startsWith("css=") || locator.startsWith("CSS=") || locator.startsWith("Css=")) {
+        } else if (locator.startsWith("css=") || locator.startsWith("CSS=") || locator.startsWith("Css=")) {
             by = By.cssSelector(getLocatorValue(locator));
-        }
-        else if (locator.startsWith("class=") || locator.startsWith("CLASS=") || locator.startsWith("Class=")) {
+        } else if (locator.startsWith("class=") || locator.startsWith("CLASS=") || locator.startsWith("Class=")) {
             by = By.className(getLocatorValue(locator));
-        }
-        else if (locator.startsWith("name=") || locator.startsWith("NAME=") || locator.startsWith("Name=")) {
+        } else if (locator.startsWith("name=") || locator.startsWith("NAME=") || locator.startsWith("Name=")) {
             by = By.name(getLocatorValue(locator));
-        }
-        else if (locator.startsWith("xpath=") || locator.startsWith("XPATH=") || locator.startsWith("Xpath=")) {
+        } else if (locator.startsWith("xpath=") || locator.startsWith("XPATH=") || locator.startsWith("Xpath=")) {
             by = By.xpath(getLocatorValue(locator));
-        }
-        else {
+        } else {
             throw new RuntimeException("Locator type is invalid");
         }
         return by;
@@ -301,10 +301,10 @@ public abstract class BasePage {
         getElement(driver, parentLocator).click();
         FunctionHelper.sleepInSeconds(1);
 
-        explicitWait =  new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
+        explicitWait = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
         List<WebElement> elements = explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(childItemLocator)));
 
-        for(WebElement element: elements) {
+        for (WebElement element : elements) {
             if (element.getText().trim().equals(expectedItem)) {
                 jsExecutor = (JavascriptExecutor) driver;
                 jsExecutor.executeScript("arguments[0].scrollIntoView(true)", element);
@@ -379,7 +379,7 @@ public abstract class BasePage {
     protected void uncheckCheckboxOrRadio(WebDriver driver, String locator) {
         List<WebElement> elements = getElements(driver, locator);
 
-        for (WebElement element:  elements) {
+        for (WebElement element : elements) {
             if (element.isSelected()) {
                 element.click();
                 break;
@@ -390,7 +390,7 @@ public abstract class BasePage {
     protected void uncheckCheckboxOrRadio(WebDriver driver, String locator, String... dynamicValues) {
         List<WebElement> elements = getElements(driver, getDynamicXpath(locator, dynamicValues));
 
-        for (WebElement element:  elements) {
+        for (WebElement element : elements) {
             if (element.isSelected()) {
                 element.click();
                 break;
@@ -401,7 +401,7 @@ public abstract class BasePage {
     protected void checkCheckboxOrRadio(WebDriver driver, String locator) {
         List<WebElement> elements = getElements(driver, locator);
 
-        for (WebElement element:  elements) {
+        for (WebElement element : elements) {
             if (!element.isSelected()) {
                 element.click();
                 break;
@@ -412,7 +412,7 @@ public abstract class BasePage {
     protected void checkCheckboxOrRadio(WebDriver driver, String locator, String... dynamicValues) {
         List<WebElement> elements = getElements(driver, getDynamicXpath(locator, dynamicValues));
 
-        for (WebElement element:  elements) {
+        for (WebElement element : elements) {
             if (!element.isSelected()) {
                 element.click();
                 break;
@@ -436,11 +436,9 @@ public abstract class BasePage {
 
         if (numberOfElements == 0) {
             return true;
-        }
-        else if (numberOfElements > 0 && !elements.get(0).isDisplayed()) {
+        } else if (numberOfElements > 0 && !elements.get(0).isDisplayed()) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -593,7 +591,7 @@ public abstract class BasePage {
         List<WebElement> elements = getElements(driver, locator);
         jsExecutor = (JavascriptExecutor) driver;
         boolean status = true;
-        for(WebElement element: elements) {
+        for (WebElement element : elements) {
             status = (boolean) jsExecutor.executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0", element);
         }
         return status;
@@ -661,12 +659,13 @@ public abstract class BasePage {
 
     /**
      * Send key to iframe
-     * @param driver webdriver instance
-     * @param value input value
+     *
+     * @param driver  webdriver instance
+     * @param value   input value
      * @param locator element locator
      * @author Son
      */
-    protected void senKeyToIframe(WebDriver driver, String value, String locator) {
+    protected void sendKeyToIframe(WebDriver driver, String value, String locator) {
         WebElement iframe = getElement(driver, locator);
         explicitWait = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
         explicitWait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframe));
@@ -676,7 +675,7 @@ public abstract class BasePage {
         driver.switchTo().defaultContent();
     }
 
-    protected void senKeyToIframe(WebDriver driver, String value, String locator, String... dynamicValues) {
+    protected void sendKeyToIframe(WebDriver driver, String value, String locator, String... dynamicValues) {
         WebElement iframe = getElement(driver, getDynamicXpath(locator, dynamicValues));
         explicitWait = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
         explicitWait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframe));
@@ -684,6 +683,26 @@ public abstract class BasePage {
         WebElement editable = driver.switchTo().activeElement();
         editable.sendKeys(value);
         driver.switchTo().defaultContent();
+    }
+
+    /**
+     * Get page title of new window tab and switch back to
+     * parent window tab, after that close child window tab
+     *
+     * @param driver
+     * @return page title of new window tab
+     */
+    protected String getPageTitleOfNewTab(WebDriver driver) {
+        FunctionHelper.sleepInSeconds(GlobalConstants.getGlobalConstants().getTinyTimeout());
+        String parentWindowId = getCurrentWindowId(driver);
+
+        // get new window tab's title for validation
+        switchWindowById(driver, parentWindowId);
+        String pageTitle = getPageTitle(driver);
+
+        // switch back to default window tab and close all other window tab
+        closeAllExceptParentWindow(driver, parentWindowId);
+        return pageTitle.trim();
     }
 }
 

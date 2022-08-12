@@ -27,6 +27,7 @@ public class GlobalConstants {
     }
 
     // timeout for implicit wait and explicit wait
+    private final long tinyTimeout = 5;
     private final long shortTimeout = 10;
     private final long longTimeout = 20;
 

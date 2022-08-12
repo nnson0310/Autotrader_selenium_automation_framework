@@ -1,18 +1,8 @@
-2022-08-11 22:29:40 INFO  StateExecutionListener:35 - ---Before test execution---
-2022-08-11 22:30:09 INFO  CreateAd:60 - TC_01_Search_With_Both_Make_And_Model - Start Test
-2022-08-11 22:30:09 INFO  CreateAd:62 - TC_01_Search_With_Both_Make_And_Model - Step 01: Select Make = 'Lamborghini' in dropdown list
-2022-08-11 22:30:10 INFO  CreateAd:65 - TC_01_Search_With_Both_Make_And_Model - Step 02: Select Model = 'Gallardo' in dropdown list
-2022-08-11 22:30:11 INFO  CreateAd:69 - TC_01_Search_With_Both_Make_And_Model - Step 03: Verify that search title contains 'Lamborghini Gallardo'
-2022-08-11 22:30:13 INFO  CreateAd:72 - TC_01_Search_With_Both_Make_And_Model - Step 04: Verify that selected filters are make = Lamborghini and model = Gallardo
-2022-08-11 22:30:13 INFO  CreateAd:75 - TC_01_Search_With_Both_Make_And_Model - Step 05: Verify that there are 3 results are displayed and all car title contains Lamborghini Gallardo
-2022-08-11 22:30:13 INFO  CreateAd:78 - TC_01_Search_With_Both_Make_And_Model - Step 06: Click to 'Autotrader' logo to return to homepage
-2022-08-11 22:30:14 INFO  CreateAd:81 - TC_01_Search_With_Both_Make_And_Model - End Test
-2022-08-11 22:30:14 INFO  CreateAd:60 - TC_01_Search_With_Both_Make_And_Model - Start Test
-2022-08-11 22:30:14 INFO  CreateAd:62 - TC_01_Search_With_Both_Make_And_Model - Step 01: Select Make = 'Chevrolet' in dropdown list
-2022-08-11 22:30:15 INFO  CreateAd:65 - TC_01_Search_With_Both_Make_And_Model - Step 02: Select Model = 'SSR' in dropdown list
-2022-08-11 22:30:16 INFO  CreateAd:69 - TC_01_Search_With_Both_Make_And_Model - Step 03: Verify that search title contains 'Chevrolet SSR'
-2022-08-11 22:30:17 INFO  CreateAd:72 - TC_01_Search_With_Both_Make_And_Model - Step 04: Verify that selected filters are make = Chevrolet and model = SSR
-2022-08-11 22:30:17 INFO  CreateAd:75 - TC_01_Search_With_Both_Make_And_Model - Step 05: Verify that there are 1 results are displayed and all car title contains Chevrolet SSR
-2022-08-11 22:30:17 INFO  CreateAd:78 - TC_01_Search_With_Both_Make_And_Model - Step 06: Click to 'Autotrader' logo to return to homepage
-2022-08-11 22:30:17 INFO  CreateAd:81 - TC_01_Search_With_Both_Make_And_Model - End Test
-2022-08-11 22:30:18 INFO  StateExecutionListener:50 - ---After test execution---
+2022-08-12 09:21:56 INFO  StateExecutionListener:35 - ---Before test execution---
+2022-08-12 09:22:15 INFO  FooterLink:47 - TC_01_Navigate_To_Dealers_Page - Step 01: Click to 'Dealers' link in footer
+2022-08-12 09:22:15 INFO  FooterLink:50 - TC_01_Navigate_To_Dealers_Page - Step 02: Switch to new tab and verify tab title = Autotrader Group
+2022-08-12 09:22:20 INFO  FooterLink:59 - TC_01_Navigate_To_CarsGuide_Page - Step 01: Click to 'CarsGuide' link in footer
+2022-08-12 09:22:21 INFO  FooterLink:62 - TC_01_Navigate_To_CarsGuide_Page - Step 02: Switch to new tab and verify tab title = CarsGuide: Car Reviews - New & Used Car Sales
+2022-08-12 09:22:26 INFO  FooterLink:71 - TC_01_Navigate_To_Gumtree_Page - Step 01: Click to 'Gumtree' link in footer
+2022-08-12 09:22:26 INFO  FooterLink:74 - TC_01_Navigate_To_Gumtree_Page - Step 02: Switch to new tab and verify tab title = Gumtree: Australia's Free Marketplace. Find a car, job, furniture & more
+2022-08-12 09:22:33 INFO  StateExecutionListener:50 - ---After test execution---

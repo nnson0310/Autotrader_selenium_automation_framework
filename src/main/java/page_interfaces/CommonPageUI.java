@@ -16,4 +16,5 @@ public interface CommonPageUI {
     String CREATE_MY_FREE_AD_BUTTON = "css=a.startAdBtn div";
     String DYNAMIC_TEXTBOX_BY_NAME_ATTRIBUTE = "xpath=//input[@name='%s']";
     String AUTOTRADER_LOGO = "css=div.header--banner svg.logo";
+    String DYNAMIC_FOOTER_LINK = "xpath=//a[@class='footer--link' and contains(text(), '%s')]";
 }
