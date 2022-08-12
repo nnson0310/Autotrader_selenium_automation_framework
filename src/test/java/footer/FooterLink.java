@@ -2,7 +2,7 @@ package footer;
 
 import commons.BaseTest;
 import data_resolver.Environment;
-import dynamic_field_name.common.FooterLinkFieldName;
+import dynamic_field_name.FooterLinkFieldName;
 import helpers.LoggerHelper;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;

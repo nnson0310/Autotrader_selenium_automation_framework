@@ -1,4 +1,4 @@
-package dynamic_field_name.sell_car;
+package dynamic_field_name;
 
 public interface CarDetailsFieldName {
     String numberPlateFieldName = "number_plate";
