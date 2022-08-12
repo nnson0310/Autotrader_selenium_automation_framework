@@ -5,6 +5,8 @@ import page_objects.contact_us.ContactUsPage;
 import page_objects.for_sale.ForSalePage;
 import page_objects.home.HomePage;
 import page_objects.profile.EditProfilePage;
+import page_objects.research.CarDimensionPage;
+import page_objects.research.ShowDimensionPage;
 import page_objects.sell_car.*;
 
 public class PageInitManager {
@@ -60,5 +62,13 @@ public class PageInitManager {
 
     public ContactUsPage getContactUsPage(WebDriver driver) {
         return new ContactUsPage(driver);
+    }
+
+    public CarDimensionPage getCarDimensionPage(WebDriver driver) {
+        return new CarDimensionPage(driver);
+    }
+
+    public ShowDimensionPage getShowDimensionPage(WebDriver driver) {
+        return new ShowDimensionPage(driver);
     }
 }

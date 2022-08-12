@@ -1,9 +1,24 @@
-2022-08-12 16:27:44 INFO  StateExecutionListener:35 - ---Before test execution---
-2022-08-12 16:27:57 INFO  ContactUs:51 - TC_01_Submit_Question_Success - Step 01: Click to 'Contact Us' link in footer
-2022-08-12 16:27:57 INFO  ContactUs:55 - TC_01_Submit_Question_Success - Step 02: Select enquiry type = Website issue, suggestion or comment
-2022-08-12 16:27:58 INFO  ContactUs:58 - TC_01_Submit_Question_Success - Step 03: Enter to name textbox with name = Isidra Okuneva
-2022-08-12 16:27:58 INFO  ContactUs:61 - TC_01_Submit_Question_Success - Step 04: Enter to email address textbox with email = robert21005@gmail.com
-2022-08-12 16:27:58 INFO  ContactUs:64 - TC_01_Submit_Question_Success - Step 05: Enter to message textarea with message = Modi dicta harum quod cupiditate. Rem porro accusamus. Ut vitae nihil tempore. Asperiores perspiciatis est totam.
-2022-08-12 16:27:58 INFO  ContactUs:67 - TC_01_Submit_Question_Success - Step 06: Click to 'Submit Questions' button
-2022-08-12 16:27:59 INFO  ContactUs:70 - TC_01_Submit_Question_Success - Step 07: Verify that success notification = 'Your enquiry was submitted successfully. We will get back to you as soon as possible.' is displayed
-2022-08-12 16:28:05 INFO  StateExecutionListener:50 - ---After test execution---
+2022-08-12 22:02:03 INFO  StateExecutionListener:35 - ---Before test execution---
+2022-08-12 22:02:33 INFO  Dimension:60 - TC_01_All_Search_Params - Start Test
+2022-08-12 22:02:33 INFO  Dimension:62 - TC_01_All_Search_Params - Step 01: Hover to 'Research' header link and click to 'Car Dimensions' navigation link
+2022-08-12 22:02:33 INFO  Dimension:66 - TC_01_All_Search_Params - Step 02: Select to Make dropdown with Make = Suzuki
+2022-08-12 22:02:35 INFO  Dimension:69 - TC_01_All_Search_Params - Step 03: Select to Model dropdown with Model = Sierra
+2022-08-12 22:02:35 INFO  Dimension:72 - TC_01_All_Search_Params - Step 04: Select to Year dropdown with Year = 2000
+2022-08-12 22:02:36 INFO  Dimension:75 - TC_01_All_Search_Params - Step 05: Click to 'Show Dimensions' button
+2022-08-12 22:02:36 INFO  Dimension:78 - TC_01_All_Search_Params - Step 06: Verify that dimension title = 2000 Suzuki Sierra Car Dimensions
+2022-08-12 22:02:37 INFO  Dimension:87 - TC_01_All_Search_Params - Step 07: Verify that number of dimensions results = 2 and all dimensions info are correct
+2022-08-12 22:02:37 INFO  Dimension:94 - TC_01_All_Search_Params - Step 08: Verify that for_sale button title = 2000 Suzuki Sierra for Sale
+2022-08-12 22:02:37 INFO  Dimension:97 - TC_01_All_Search_Params - Step 09: Click to Autotrader Logo to return to homepage
+2022-08-12 22:02:37 INFO  Dimension:100 - TC_01_All_Search_Params - End Test
+2022-08-12 22:02:37 INFO  Dimension:60 - TC_01_All_Search_Params - Start Test
+2022-08-12 22:02:37 INFO  Dimension:62 - TC_01_All_Search_Params - Step 01: Hover to 'Research' header link and click to 'Car Dimensions' navigation link
+2022-08-12 22:02:38 INFO  Dimension:66 - TC_01_All_Search_Params - Step 02: Select to Make dropdown with Make = Dodge
+2022-08-12 22:02:38 INFO  Dimension:69 - TC_01_All_Search_Params - Step 03: Select to Model dropdown with Model = Avenger
+2022-08-12 22:02:39 INFO  Dimension:72 - TC_01_All_Search_Params - Step 04: Select to Year dropdown with Year = 2010
+2022-08-12 22:02:39 INFO  Dimension:75 - TC_01_All_Search_Params - Step 05: Click to 'Show Dimensions' button
+2022-08-12 22:02:39 INFO  Dimension:78 - TC_01_All_Search_Params - Step 06: Verify that dimension title = 2010 Dodge Avenger Car Dimensions
+2022-08-12 22:02:40 INFO  Dimension:87 - TC_01_All_Search_Params - Step 07: Verify that number of dimensions results = 2 and all dimensions info are correct
+2022-08-12 22:02:40 INFO  Dimension:94 - TC_01_All_Search_Params - Step 08: Verify that for_sale button title = 2010 Dodge Avenger for Sale
+2022-08-12 22:02:40 INFO  Dimension:97 - TC_01_All_Search_Params - Step 09: Click to Autotrader Logo to return to homepage
+2022-08-12 22:02:40 INFO  Dimension:100 - TC_01_All_Search_Params - End Test
+2022-08-12 22:02:44 INFO  StateExecutionListener:50 - ---After test execution---

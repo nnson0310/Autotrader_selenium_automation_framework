@@ -6,6 +6,7 @@ import helpers.FunctionHelper;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import page_interfaces.CommonPageUI;
+import page_objects.home.HomePage;
 import page_objects.profile.EditProfilePage;
 import page_objects.sell_car.SellFeaturesPage;
 import page_objects.sell_car.SellMyCarPage;
@@ -107,9 +108,10 @@ public class CommonPage extends BasePage {
     }
 
     @Step("Click to 'Autotrader' logo")
-    public void clickToAutotraderLogo(WebDriver driver) {
+    public HomePage clickToAutotraderLogo(WebDriver driver) {
         waitForElementClickable(driver, CommonPageUI.AUTOTRADER_LOGO);
         clickToElement(driver, CommonPageUI.AUTOTRADER_LOGO);
+        return PageInitManager.getPageInitManager().getHomePage(driver);
     }
 
     @Step("Click to footer link = {1}")
@@ -122,5 +124,14 @@ public class CommonPage extends BasePage {
     @Step("Switch to new tab and get page title")
     public String getPageTitleOfNewTab(WebDriver driver) {
         return super.getPageTitleOfNewTab(driver);
+    }
+
+    @Step("Hover to header navigation link = {1} and click to {2}")
+    public void clickToHeaderNavigationLink(WebDriver driver, String navTopItem, String navSubItem) {
+        waitForElementClickable(driver, CommonPageUI.HEADER_NAVIGATION_LINK, navTopItem);
+        clickToElement(driver, CommonPageUI.HEADER_NAVIGATION_LINK, navTopItem);
+
+        waitForElementClickable(driver, CommonPageUI.HEADER_NAV_SUB_ITEM_LINK, navSubItem);
+        clickToElement(driver, CommonPageUI.HEADER_NAV_SUB_ITEM_LINK, navSubItem);
     }
 }

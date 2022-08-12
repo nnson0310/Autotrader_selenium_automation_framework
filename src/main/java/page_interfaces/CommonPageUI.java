@@ -17,4 +17,6 @@ public interface CommonPageUI {
     String DYNAMIC_TEXTBOX_BY_NAME_ATTRIBUTE = "xpath=//input[@name='%s']";
     String AUTOTRADER_LOGO = "css=div.header--banner svg.logo";
     String DYNAMIC_FOOTER_LINK = "xpath=//a[@class='footer--link' and contains(text(), '%s')]";
+    String HEADER_NAV_SUB_ITEM_LINK = "xpath=//li[@class='header--navItem']//a[@class='header--navSubItem--link' and contains(text(), '%s')]";
+    String HEADER_NAVIGATION_LINK = "xpath=//li[@class='header--navItem']//div[@class='header--navTopItem' and contains(text(), '%s')]";
 }
