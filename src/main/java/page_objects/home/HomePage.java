@@ -1,14 +1,11 @@
 package page_objects.home;
 
-import helpers.FunctionHelper;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import page_interfaces.home.HomePageUI;
 import page_objects.CommonPage;
 import page_objects.PageInitManager;
 import page_objects.for_sale.ForSalePage;
-
-import java.util.List;
 
 public class HomePage extends CommonPage {
     WebDriver driver;

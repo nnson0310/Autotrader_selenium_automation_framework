@@ -1,19 +1,13 @@
-2022-08-14 15:00:45 INFO  StateExecutionListener:35 - ---Before test execution---
-2022-08-14 15:00:53 INFO  Login:27 - Pre-condition - Login with valid credentials - Step 01: Click to SignUp/Login button to open SignUp/Login popup
-2022-08-14 15:00:54 INFO  Login:30 - Pre-condition - Login with valid credentials - Step 02: Enter to email textbox with email = yukawa123@gmail.com
-2022-08-14 15:00:56 INFO  Login:33 - Pre-condition - Login with valid credentials - Step 03: Enter to password textbox with password = Tomanyeuem123
-2022-08-14 15:00:57 INFO  Login:36 - Pre-condition - Login with valid credentials - Step 04: Click to Login button
-2022-08-14 15:00:57 INFO  Login:39 - Pre-condition - Login with valid credentials - Step 05: Verify that username = Nieves is displayed on header
-2022-08-14 15:00:59 INFO  RemoveFavouritedCar:27 - Pre-condition - Remove all favourited cars - Step 01: Click to heart icon to show favourite shortlist
-2022-08-14 15:01:00 INFO  RemoveFavouritedCar:30 - Pre-condition - Remove all favourited cars - Step 02: Click to 'Show More' link to go to Favourited_Cars page
-2022-08-14 15:01:00 INFO  RemoveFavouritedCar:33 - Pre-condition - Remove all favourited cars - Step 03: Click to star icon to remove all added car
-2022-08-14 15:01:06 INFO  RemoveFavouritedCar:36 - Pre-condition - Remove all favourited cars - Step 04: Click to 'AutoTrader' logo to return to homepage
-2022-08-14 15:01:07 INFO  AddToFavouriteList:76 - TC_01_Add_To_Favourite - Step 01: Click to Featured Searches = Cheap cars under $10K
-2022-08-14 15:01:08 INFO  AddToFavouriteList:79 - TC_01_Add_To_Favourite - Step 02: Add car = '2008 BMW 120I' to favourite list by clicking to heart icon
-2022-08-14 15:01:11 INFO  AddToFavouriteList:82 - TC_01_Add_To_Favourite - Step 03: Verify that success notify = 'You have shortlisted a car.' is displayed
-2022-08-14 15:01:12 INFO  AddToFavouriteList:85 - TC_01_Add_To_Favourite - Step 04: Verify that number of favourite car counted on header = 1
-2022-08-14 15:01:17 INFO  AddToFavouriteList:88 - TC_01_Add_To_Favourite - Step 05: Click to heart icon on header to show shortlist of added favourited cars
-2022-08-14 15:01:17 INFO  AddToFavouriteList:92 - TC_01_Add_To_Favourite - Step 06: Verify that car name = 2008 BMW 120I and subtitle = $9,999 • 132,684km showing on shortlist
-2022-08-14 15:01:17 INFO  AddToFavouriteList:95 - TC_01_Add_To_Favourite - Step 08: Click to 'Show More' link of shortlist
-2022-08-14 15:01:18 INFO  AddToFavouriteList:98 - TC_01_Add_To_Favourite - Step 09: Verify that car name = 2008 BMW 120I are displayed with correct information
-2022-08-14 15:01:21 INFO  StateExecutionListener:50 - ---After test execution---
+2022-08-14 23:00:37 INFO  StateExecutionListener:35 - ---Before test execution---
+2022-08-14 23:00:44 INFO  AddToFavouriteList:56 - TC_01_Add_To_Favourite - Step 01: Hover to 'Buy' header link and click to 'All Cars' navigation link
+2022-08-14 23:00:52 INFO  AddToFavouriteList:60 - TC_01_Add_To_Favourite - Step 02: Click to Make filter = Audi
+2022-08-14 23:00:52 INFO  AddToFavouriteList:63 - TC_01_Add_To_Favourite - Step 03: Click to 'Cheap Cars' of Price Filter
+2022-08-14 23:00:53 INFO  AddToFavouriteList:66 - TC_01_Add_To_Favourite - Step 04: Click to Cheap cars for sale under $7,500 of Price Filter
+2022-08-14 23:00:54 INFO  AddToFavouriteList:69 - TC_01_Add_To_Favourite - Step 05: Click to 'Old Cars' link of Year Filter
+2022-08-14 23:00:56 INFO  AddToFavouriteList:72 - TC_01_Add_To_Favourite - Step 06: Click to year = 2003 link of Year Filter
+2022-08-14 23:00:57 INFO  AddToFavouriteList:76 - TC_01_Add_To_Favourite - Step 07: Verify that all filtered cars have following information: 
++ Car name contains '2003 Audi'.
++ There are '1' cars displayed as filtered results.
++ Price is '$6,995'.
+
+2022-08-14 23:00:59 INFO  StateExecutionListener:50 - ---After test execution---

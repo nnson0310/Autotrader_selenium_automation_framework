@@ -163,4 +163,13 @@ public class CommonPage extends BasePage {
         clickToElement(driver, CommonPageUI.SHORTLIST_SHOW_MORE_LINK);
         return PageInitManager.getPageInitManager().getFavouritedCarPage(driver);
     }
+
+    @Step("Hover to 'Buy' header link and click to navigation link = {1)")
+    public void clickToBuyHeaderNavItemLink(WebDriver driver, String navLink) {
+        waitForElementVisible(driver, CommonPageUI.BUY_HEADER_NAVIGATION_LINK);
+        hoverToElement(driver, CommonPageUI.BUY_HEADER_NAVIGATION_LINK);
+
+        waitForElementClickable(driver, CommonPageUI.BUY_HEADER_NAV_SUB_ITEM_LINK, navLink);
+        clickToElement(driver, CommonPageUI.BUY_HEADER_NAV_SUB_ITEM_LINK, navLink);
+    }
 }
