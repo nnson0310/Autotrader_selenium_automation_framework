@@ -24,4 +24,6 @@ public interface CommonPageUI {
     String FAVOURITED_CAR_HEADER_NAV_COUNT_LABEL_DIV = "xpath=//*[name()='svg' and contains(@class, 'shortlistIcon')]//preceding-sibling::div";
     String SHORTLIST_CARD_ITEM = "xpath=//div[@class='shortlist--cards']//p[@class='title' and contains(text(), '%s')]//following-sibling::p[contains(text(), '%s')]";
     String SHORTLIST_SHOW_MORE_LINK = "css=div.header--shortlist p.shortlist--link";
+    String BUY_HEADER_NAVIGATION_LINK = "xpath=//li[@class='header--navItem']//a[contains(@class, 'header--navTopItem') and contains(text(), 'Buy')]";
+    String BUY_HEADER_NAV_SUB_ITEM_LINK = "xpath=//li[@class='header--navItem']//a[@class='header--navSubItem--link' and contains(text(), '%s')]";
 }

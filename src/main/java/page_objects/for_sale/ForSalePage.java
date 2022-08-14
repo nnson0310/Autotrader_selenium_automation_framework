@@ -41,4 +41,39 @@ public class ForSalePage extends CommonPage {
         waitForElementClickable(driver, ForSalePageUI.SHORTLIST_HEART_ICON, carName);
         clickToElement(driver, ForSalePageUI.SHORTLIST_HEART_ICON, carName);
     }
+
+    @Step("Click to filter link = {1}")
+    public void clickToFilterLink(WebDriver driver, String mainFilterLink, String subFilterLink) {
+        waitForElementInvisible(driver, ForSalePageUI.LOADING_ICON);
+        waitForElementClickable(driver, ForSalePageUI.FILTER_LINK, mainFilterLink, subFilterLink);
+        clickToElement(driver, ForSalePageUI.FILTER_LINK, mainFilterLink, subFilterLink);
+    }
+
+    @Step("Verify that all filtered cars name contain '{1}'")
+    public boolean isCarNameDisplayed(WebDriver driver, String carName) {
+        boolean result = true;
+        waitForAllElementVisible(driver, ForSalePageUI.CAR_NAME_LABEL_H3);
+        List<String> names = getElementsText(driver, ForSalePageUI.CAR_NAME_LABEL_H3);
+        for(String name: names) {
+            result = name.contains(carName);
+        }
+        return result;
+    }
+
+    @Step("Get number of filtered cars")
+    public int getNumberOfCars(WebDriver driver) {
+        waitForAllElementVisible(driver, ForSalePageUI.CAR_NAME_LABEL_H3);
+        return getElementSize(driver, ForSalePageUI.CAR_NAME_LABEL_H3);
+    }
+
+    @Step("Verify that all filtered car price are below {2}")
+    public boolean isCarPriceDisplayed(WebDriver driver, String carPrice) {
+        boolean result = true;
+        waitForAllElementVisible(driver, ForSalePageUI.CAR_PRICE_LABEL_SPAN);
+        List<String> prices = getElementsText(driver, ForSalePageUI.CAR_PRICE_LABEL_SPAN);
+        for(String price: prices) {
+            result = price.equalsIgnoreCase(carPrice);
+        }
+        return result;
+    }
 }
