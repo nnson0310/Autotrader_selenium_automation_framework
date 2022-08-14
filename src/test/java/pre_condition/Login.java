@@ -6,9 +6,8 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import page_objects.home.HomePage;
-import page_objects.PageInitManager;
 
-public class LoginHelper {
+public class Login {
 
     HomePage homePage;
     Logger log;
@@ -18,10 +17,10 @@ public class LoginHelper {
     private final String password = ParseJsonHelper.getLoginCredentials().getPassword();
     private final String username = ParseJsonHelper.getLoginCredentials().getUsername();
 
-    public LoginHelper(WebDriver driver) {
+    public Login(WebDriver driver, HomePage homePage) {
         this.driver = driver;
-        homePage = PageInitManager.getPageInitManager().getHomePage(driver);
-        log = LoggerHelper.getLogger(LoginHelper.class);
+        this.homePage = homePage;
+        log = LoggerHelper.getLogger(Login.class);
     }
 
     public void loginWithValidCredentials() {

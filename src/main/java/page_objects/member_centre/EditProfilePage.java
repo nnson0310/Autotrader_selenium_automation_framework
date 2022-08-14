@@ -1,11 +1,10 @@
-package page_objects.profile;
+package page_objects.member_centre;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
-import page_interfaces.profile.EditProfilePageUI;
-import page_objects.CommonPage;
+import page_interfaces.member_centre.EditProfilePageUI;
 
-public class EditProfilePage extends CommonPage {
+public class EditProfilePage extends MemberCentrePage {
     WebDriver driver;
 
     public EditProfilePage(WebDriver driver) {

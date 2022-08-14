@@ -7,11 +7,11 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
-import page_objects.profile.EditProfilePage;
+import page_objects.member_centre.EditProfilePage;
 import page_objects.home.HomePage;
 import page_objects.PageInitManager;
 import parameter_resolver.EnvironmentParameterResolver;
-import pre_condition.LoginHelper;
+import pre_condition.Login;
 
 @Tag("edit_profile")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -41,7 +41,7 @@ public class EditProfile extends BaseTest {
         homePage = PageInitManager.getPageInitManager().getHomePage(driver);
 
         // login credentials
-        LoginHelper loginHelper = new LoginHelper(driver);
+        Login loginHelper = new Login(driver, homePage);
         loginHelper.loginWithValidCredentials();
 
         // test data

@@ -9,7 +9,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ParseJsonHelper {
 
@@ -72,13 +71,19 @@ public class ParseJsonHelper {
         return null;
     }
 
+    public static AddToFavourite getAddToFavourite(){
+        Gson gson = new Gson();
+        try {
+            FileReader fileReader = new FileReader(pathToJsonTestData + "add_to_favourite.json");
+            return gson.fromJson(fileReader, AddToFavourite.class);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 //    public static void main(String[] args) {
-//        ArrayList<CarDimension> carDimensionArrayList = getCarDimensionList();
-//        for(CarDimension car: carDimensionArrayList) {
-//            List<CarDimension.ExpectedResults> expectedResults = car.getExpectedResults();
-//            for(CarDimension.ExpectedResults expectedResult: expectedResults) {
-//                System.out.println(expectedResult.getHxwxl());
-//            }
-//        }
+//        FavouritedCars favouritedCars = getFavouritedCars();
+//        System.out.println(favouritedCars.getFeaturedSearches());
 //    }
 }

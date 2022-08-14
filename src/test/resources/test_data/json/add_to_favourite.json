@@ -1,0 +1,9 @@
+{
+  "featured_searches": "Cheap cars under $10K",
+  "cars": {
+    "name": "2008 BMW 120I",
+    "price": "$9,999",
+    "odometer_reading": "132,684km"
+  },
+  "expected_notify": "You have shortlisted a car."
+}
