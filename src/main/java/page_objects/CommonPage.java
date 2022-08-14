@@ -1,14 +1,12 @@
 package page_objects;
 
 import commons.BasePage;
-import commons.GlobalConstants;
-import helpers.FunctionHelper;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import page_interfaces.CommonPageUI;
 import page_objects.home.HomePage;
-import page_objects.profile.EditProfilePage;
-import page_objects.sell_car.SellFeaturesPage;
+import page_objects.member_centre.EditProfilePage;
+import page_objects.member_centre.FavouritedCarPage;
 import page_objects.sell_car.SellMyCarPage;
 
 public class CommonPage extends BasePage {
@@ -133,5 +131,36 @@ public class CommonPage extends BasePage {
 
         waitForElementClickable(driver, CommonPageUI.HEADER_NAV_SUB_ITEM_LINK, navSubItem);
         clickToElement(driver, CommonPageUI.HEADER_NAV_SUB_ITEM_LINK, navSubItem);
+    }
+
+    @Step("Verify that notify message = {1} is displayed")
+    public boolean isNotifyDisplayed(WebDriver driver, String notifyMessage) {
+        waitForElementVisible(driver, CommonPageUI.SUCCESS_NOTIFICATION, notifyMessage);
+        return isElementDisplayed(driver, CommonPageUI.SUCCESS_NOTIFICATION, notifyMessage);
+    }
+
+    @Step("Click to heart icon on header to show all added car in favourite shortlist")
+    public void clickToHeartIconOnHeader(WebDriver driver) {
+        waitForElementClickable(driver, CommonPageUI.FAVOURITED_CAR_HEADER_NAV_COUNT_LABEL_DIV);
+        clickToElement(driver, CommonPageUI.FAVOURITED_CAR_HEADER_NAV_COUNT_LABEL_DIV);
+    }
+
+    @Step("Verify that car name = {1} and sub title = {2} are displayed in favourite shortlist")
+    public boolean isFavouritedCarsDisplayedInShortlist(WebDriver driver, String carName, String subTitle) {
+        waitForElementVisible(driver, CommonPageUI.SHORTLIST_CARD_ITEM, carName, subTitle);
+        return isElementDisplayed(driver, CommonPageUI.SHORTLIST_CARD_ITEM, carName, subTitle);
+    }
+
+    @Step("Get number of added favourite car counted on header")
+    public int getAddedFavouriteCarCountOnHeader(WebDriver driver, String notifyMessage) {
+        waitForStalenessOfElement(driver, CommonPageUI.SUCCESS_NOTIFICATION, notifyMessage);
+        return Integer.parseInt(getElementText(driver, CommonPageUI.FAVOURITED_CAR_HEADER_NAV_COUNT_LABEL_SPAN));
+    }
+
+    @Step("Click to 'Show More' link of shortlist to go to Favourited_Cars page")
+    public FavouritedCarPage clickToShowMoreShortlistLink(WebDriver driver) {
+        waitForElementVisible(driver, CommonPageUI.SHORTLIST_SHOW_MORE_LINK);
+        clickToElement(driver, CommonPageUI.SHORTLIST_SHOW_MORE_LINK);
+        return PageInitManager.getPageInitManager().getFavouritedCarPage(driver);
     }
 }

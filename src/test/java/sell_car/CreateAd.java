@@ -18,7 +18,7 @@ import page_objects.PageInitManager;
 import page_objects.home.HomePage;
 import page_objects.sell_car.*;
 import parameter_resolver.EnvironmentParameterResolver;
-import pre_condition.LoginHelper;
+import pre_condition.Login;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +64,7 @@ public class CreateAd extends BaseTest {
         homePage = PageInitManager.getPageInitManager().getHomePage(driver);
 
         // login as pre condition
-        LoginHelper loginHelper = new LoginHelper(driver);
+        Login loginHelper = new Login(driver, homePage);
         loginHelper.loginWithValidCredentials();
 
         // test data

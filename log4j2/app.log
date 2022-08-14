@@ -1,24 +1,19 @@
-2022-08-12 22:02:03 INFO  StateExecutionListener:35 - ---Before test execution---
-2022-08-12 22:02:33 INFO  Dimension:60 - TC_01_All_Search_Params - Start Test
-2022-08-12 22:02:33 INFO  Dimension:62 - TC_01_All_Search_Params - Step 01: Hover to 'Research' header link and click to 'Car Dimensions' navigation link
-2022-08-12 22:02:33 INFO  Dimension:66 - TC_01_All_Search_Params - Step 02: Select to Make dropdown with Make = Suzuki
-2022-08-12 22:02:35 INFO  Dimension:69 - TC_01_All_Search_Params - Step 03: Select to Model dropdown with Model = Sierra
-2022-08-12 22:02:35 INFO  Dimension:72 - TC_01_All_Search_Params - Step 04: Select to Year dropdown with Year = 2000
-2022-08-12 22:02:36 INFO  Dimension:75 - TC_01_All_Search_Params - Step 05: Click to 'Show Dimensions' button
-2022-08-12 22:02:36 INFO  Dimension:78 - TC_01_All_Search_Params - Step 06: Verify that dimension title = 2000 Suzuki Sierra Car Dimensions
-2022-08-12 22:02:37 INFO  Dimension:87 - TC_01_All_Search_Params - Step 07: Verify that number of dimensions results = 2 and all dimensions info are correct
-2022-08-12 22:02:37 INFO  Dimension:94 - TC_01_All_Search_Params - Step 08: Verify that for_sale button title = 2000 Suzuki Sierra for Sale
-2022-08-12 22:02:37 INFO  Dimension:97 - TC_01_All_Search_Params - Step 09: Click to Autotrader Logo to return to homepage
-2022-08-12 22:02:37 INFO  Dimension:100 - TC_01_All_Search_Params - End Test
-2022-08-12 22:02:37 INFO  Dimension:60 - TC_01_All_Search_Params - Start Test
-2022-08-12 22:02:37 INFO  Dimension:62 - TC_01_All_Search_Params - Step 01: Hover to 'Research' header link and click to 'Car Dimensions' navigation link
-2022-08-12 22:02:38 INFO  Dimension:66 - TC_01_All_Search_Params - Step 02: Select to Make dropdown with Make = Dodge
-2022-08-12 22:02:38 INFO  Dimension:69 - TC_01_All_Search_Params - Step 03: Select to Model dropdown with Model = Avenger
-2022-08-12 22:02:39 INFO  Dimension:72 - TC_01_All_Search_Params - Step 04: Select to Year dropdown with Year = 2010
-2022-08-12 22:02:39 INFO  Dimension:75 - TC_01_All_Search_Params - Step 05: Click to 'Show Dimensions' button
-2022-08-12 22:02:39 INFO  Dimension:78 - TC_01_All_Search_Params - Step 06: Verify that dimension title = 2010 Dodge Avenger Car Dimensions
-2022-08-12 22:02:40 INFO  Dimension:87 - TC_01_All_Search_Params - Step 07: Verify that number of dimensions results = 2 and all dimensions info are correct
-2022-08-12 22:02:40 INFO  Dimension:94 - TC_01_All_Search_Params - Step 08: Verify that for_sale button title = 2010 Dodge Avenger for Sale
-2022-08-12 22:02:40 INFO  Dimension:97 - TC_01_All_Search_Params - Step 09: Click to Autotrader Logo to return to homepage
-2022-08-12 22:02:40 INFO  Dimension:100 - TC_01_All_Search_Params - End Test
-2022-08-12 22:02:44 INFO  StateExecutionListener:50 - ---After test execution---
+2022-08-14 15:00:45 INFO  StateExecutionListener:35 - ---Before test execution---
+2022-08-14 15:00:53 INFO  Login:27 - Pre-condition - Login with valid credentials - Step 01: Click to SignUp/Login button to open SignUp/Login popup
+2022-08-14 15:00:54 INFO  Login:30 - Pre-condition - Login with valid credentials - Step 02: Enter to email textbox with email = yukawa123@gmail.com
+2022-08-14 15:00:56 INFO  Login:33 - Pre-condition - Login with valid credentials - Step 03: Enter to password textbox with password = Tomanyeuem123
+2022-08-14 15:00:57 INFO  Login:36 - Pre-condition - Login with valid credentials - Step 04: Click to Login button
+2022-08-14 15:00:57 INFO  Login:39 - Pre-condition - Login with valid credentials - Step 05: Verify that username = Nieves is displayed on header
+2022-08-14 15:00:59 INFO  RemoveFavouritedCar:27 - Pre-condition - Remove all favourited cars - Step 01: Click to heart icon to show favourite shortlist
+2022-08-14 15:01:00 INFO  RemoveFavouritedCar:30 - Pre-condition - Remove all favourited cars - Step 02: Click to 'Show More' link to go to Favourited_Cars page
+2022-08-14 15:01:00 INFO  RemoveFavouritedCar:33 - Pre-condition - Remove all favourited cars - Step 03: Click to star icon to remove all added car
+2022-08-14 15:01:06 INFO  RemoveFavouritedCar:36 - Pre-condition - Remove all favourited cars - Step 04: Click to 'AutoTrader' logo to return to homepage
+2022-08-14 15:01:07 INFO  AddToFavouriteList:76 - TC_01_Add_To_Favourite - Step 01: Click to Featured Searches = Cheap cars under $10K
+2022-08-14 15:01:08 INFO  AddToFavouriteList:79 - TC_01_Add_To_Favourite - Step 02: Add car = '2008 BMW 120I' to favourite list by clicking to heart icon
+2022-08-14 15:01:11 INFO  AddToFavouriteList:82 - TC_01_Add_To_Favourite - Step 03: Verify that success notify = 'You have shortlisted a car.' is displayed
+2022-08-14 15:01:12 INFO  AddToFavouriteList:85 - TC_01_Add_To_Favourite - Step 04: Verify that number of favourite car counted on header = 1
+2022-08-14 15:01:17 INFO  AddToFavouriteList:88 - TC_01_Add_To_Favourite - Step 05: Click to heart icon on header to show shortlist of added favourited cars
+2022-08-14 15:01:17 INFO  AddToFavouriteList:92 - TC_01_Add_To_Favourite - Step 06: Verify that car name = 2008 BMW 120I and subtitle = $9,999 • 132,684km showing on shortlist
+2022-08-14 15:01:17 INFO  AddToFavouriteList:95 - TC_01_Add_To_Favourite - Step 08: Click to 'Show More' link of shortlist
+2022-08-14 15:01:18 INFO  AddToFavouriteList:98 - TC_01_Add_To_Favourite - Step 09: Verify that car name = 2008 BMW 120I are displayed with correct information
+2022-08-14 15:01:21 INFO  StateExecutionListener:50 - ---After test execution---

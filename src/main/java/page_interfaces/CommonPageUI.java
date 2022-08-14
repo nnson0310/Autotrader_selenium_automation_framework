@@ -19,4 +19,9 @@ public interface CommonPageUI {
     String DYNAMIC_FOOTER_LINK = "xpath=//a[@class='footer--link' and contains(text(), '%s')]";
     String HEADER_NAV_SUB_ITEM_LINK = "xpath=//li[@class='header--navItem']//a[@class='header--navSubItem--link' and contains(text(), '%s')]";
     String HEADER_NAVIGATION_LINK = "xpath=//li[@class='header--navItem']//div[@class='header--navTopItem' and contains(text(), '%s')]";
+    String SUCCESS_NOTIFICATION = "xpath=//div[contains(@class, 'success')]//p[contains(.,'%s')]";
+    String FAVOURITED_CAR_HEADER_NAV_COUNT_LABEL_SPAN = "css=svg.shortlistIcon+div>span.header--navCount";
+    String FAVOURITED_CAR_HEADER_NAV_COUNT_LABEL_DIV = "xpath=//*[name()='svg' and contains(@class, 'shortlistIcon')]//preceding-sibling::div";
+    String SHORTLIST_CARD_ITEM = "xpath=//div[@class='shortlist--cards']//p[@class='title' and contains(text(), '%s')]//following-sibling::p[contains(text(), '%s')]";
+    String SHORTLIST_SHOW_MORE_LINK = "css=div.header--shortlist p.shortlist--link";
 }

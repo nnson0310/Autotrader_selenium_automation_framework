@@ -5,6 +5,10 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import page_interfaces.home.HomePageUI;
 import page_objects.CommonPage;
+import page_objects.PageInitManager;
+import page_objects.for_sale.ForSalePage;
+
+import java.util.List;
 
 public class HomePage extends CommonPage {
     WebDriver driver;
@@ -41,5 +45,12 @@ public class HomePage extends CommonPage {
 
         waitForElementClickable(driver, HomePageUI.MEGA_DROPDOWN_ITEM, model);
         clickToElement(driver, HomePageUI.MEGA_DROPDOWN_ITEM, model);
+    }
+
+    @Step("Click to Featured Searches = {1} in home page")
+    public ForSalePage clickToFeaturedSearches(WebDriver driver, String featuredSearchName) {
+        waitForElementClickable(driver, HomePageUI.FEATURED_SEARCH_LINK_ITEM, featuredSearchName);
+        clickToElement(driver, HomePageUI.FEATURED_SEARCH_LINK_ITEM, featuredSearchName);
+        return PageInitManager.getPageInitManager().getForSalePage(driver);
     }
 }

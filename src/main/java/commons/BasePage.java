@@ -128,6 +128,16 @@ public abstract class BasePage {
         return explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(getDynamicXpath(locator, dynamicValues))));
     }
 
+    protected Boolean waitForStalenessOfElement(WebDriver driver, String locator) {
+        explicitWait = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
+        return explicitWait.until(ExpectedConditions.stalenessOf(getElement(driver, locator)));
+    }
+
+    protected Boolean waitForStalenessOfElement(WebDriver driver, String locator, String... dynamicValues) {
+        explicitWait = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
+        return explicitWait.until(ExpectedConditions.stalenessOf(getElement(driver, getDynamicXpath(locator, dynamicValues))));
+    }
+
     protected void switchWindowById(WebDriver driver, String currentWindowId) {
         Set<String> allWindowIds = driver.getWindowHandles();
 
@@ -326,11 +336,11 @@ public abstract class BasePage {
     }
 
     protected String getElementText(WebDriver driver, String locator) {
-        return getElement(driver, locator).getText();
+        return getElement(driver, locator).getText().trim();
     }
 
     protected String getElementText(WebDriver driver, String locator, String... dynamicValues) {
-        return getElement(driver, getDynamicXpath(locator, dynamicValues)).getText();
+        return getElement(driver, getDynamicXpath(locator, dynamicValues)).getText().trim();
     }
 
     protected String getElementProperty(WebDriver driver, String locator, String propertyName) {

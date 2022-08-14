@@ -23,7 +23,7 @@ public class ForSalePage extends CommonPage {
     @Step("Verify all selected filters are displayed correctly")
     public boolean areSelectedFiltersDisplayed(WebDriver driver, List<String> selectedFilters) {
         boolean result = true;
-        for(String filter : selectedFilters) {
+        for (String filter : selectedFilters) {
             waitForElementVisible(driver, ForSalePageUI.SELECTED_FILTER_LABEL_P, filter);
             result = isElementDisplayed(driver, ForSalePageUI.SELECTED_FILTER_LABEL_P, filter);
         }
@@ -34,5 +34,11 @@ public class ForSalePage extends CommonPage {
     public String getNumberOfCarListingTitle(WebDriver driver, String carName) {
         waitForElementVisible(driver, ForSalePageUI.CAR_LISTING_TITLE_LABEL_STRONG, carName);
         return String.valueOf(getElementSize(driver, ForSalePageUI.CAR_LISTING_TITLE_LABEL_STRONG, carName));
+    }
+
+    @Step("Click to heart icon of car name = {1} to add car to favourite list")
+    public void clickToShortListHeartIcon(WebDriver driver, String carName) {
+        waitForElementClickable(driver, ForSalePageUI.SHORTLIST_HEART_ICON, carName);
+        clickToElement(driver, ForSalePageUI.SHORTLIST_HEART_ICON, carName);
     }
 }

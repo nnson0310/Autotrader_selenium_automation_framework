@@ -1,4 +1,4 @@
-package page_interfaces.profile;
+package page_interfaces.member_centre;
 
 public interface EditProfilePageUI {
     String FIRST_NAME_TEXTBOX = "css=div.form--sectionOne input[name='first_name']";

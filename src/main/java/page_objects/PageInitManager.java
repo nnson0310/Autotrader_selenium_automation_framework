@@ -4,7 +4,8 @@ import org.openqa.selenium.WebDriver;
 import page_objects.contact_us.ContactUsPage;
 import page_objects.for_sale.ForSalePage;
 import page_objects.home.HomePage;
-import page_objects.profile.EditProfilePage;
+import page_objects.member_centre.EditProfilePage;
+import page_objects.member_centre.FavouritedCarPage;
 import page_objects.research.CarDimensionPage;
 import page_objects.research.ShowDimensionPage;
 import page_objects.sell_car.*;
@@ -70,5 +71,9 @@ public class PageInitManager {
 
     public ShowDimensionPage getShowDimensionPage(WebDriver driver) {
         return new ShowDimensionPage(driver);
+    }
+
+    public FavouritedCarPage getFavouritedCarPage(WebDriver driver) {
+        return new FavouritedCarPage(driver);
     }
 }
