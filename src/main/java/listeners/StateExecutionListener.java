@@ -50,9 +50,10 @@ public class StateExecutionListener implements TestExecutionListener {
         log.info("---After test execution---");
 
         //stop record video
+        Environment environmentName = Environment.valueOf(environment.toUpperCase());
         if (recordLocalVideo) {
             RecordVideoHelper.stopRecord();
-        } else {
+        } else if (environmentName == Environment.CLOUD) {
             // delete all old videos in browser-stack-videos
             FunctionHelper.deleteAllFilesInFolder(new File(GlobalConstants.getGlobalConstants().getPathToBrowserStackVideo()));
 

@@ -22,20 +22,18 @@ public class GridEnvFactory implements EnvFactory {
     }
 
     public WebDriver initBrowserDriver() {
-        Browser browser = Browser.valueOf(browserName);
+        Browser browser = Browser.valueOf(browserName.toUpperCase());
 
         try {
             if (browser == Browser.CHROME) {
-                driver = new ChromeDriverFactory().getBrowserDriver(ipAddress, port);
+                driver = new ChromeDriverFactory().getBrowserDriver(browserName, ipAddress, port);
             }
             else {
-                driver = new FirefoxDriverFactory().getBrowserDriver(ipAddress, port);
+                driver = new FirefoxDriverFactory().getBrowserDriver(browserName, ipAddress, port);
             }
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-
-
 
         return driver;
     }

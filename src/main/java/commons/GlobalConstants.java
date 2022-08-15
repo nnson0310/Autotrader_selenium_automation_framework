@@ -41,6 +41,7 @@ public class GlobalConstants {
     private final String pathToTestResource = Paths.get("src", "test", "resources").toFile().getAbsolutePath();
     private final String pathToEnvironmentPropertyFile = pathToMainResource + File.separator + "environment.properties";
     private final String pathToBrowserStackVideo = projectPath + File.separator + "browser-stack-videos" + File.separator;
+    private final String pathToBrowserDriver = projectPath + File.separator + "browser-driver" + File.separator;
 
     private final String pathToJsonTestData = pathToTestResource + File.separator + "test_data" + File.separator + "json" + File.separator;
     private final String pathToCsvTestData = pathToTestResource + File.separator + "test_data" + File.separator + "csv" + File.separator;
