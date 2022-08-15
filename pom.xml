@@ -175,6 +175,10 @@
                     <properties>
                         <configurationParameters>
                             junit.platform.reporting.open.xml.enabled = true
+<!--                            junit.jupiter.execution.parallel.enabled = true-->
+<!--                            junit.jupiter.execution.parallel.mode.default = concurrent-->
+<!--                            junit.jupiter.execution.parallel.mode.classes.default = same_thread-->
+<!--                            junit.jupiter.execution.parallel.config.strategy=dynamic-->
                             junit.platform.reporting.output.dir = ${project.build.directory}/surefire-reports
                         </configurationParameters>
                     </properties>

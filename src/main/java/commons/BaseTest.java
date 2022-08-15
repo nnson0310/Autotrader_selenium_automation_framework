@@ -5,10 +5,16 @@ import env_factory.GridEnvFactory;
 import env_factory.LocalEnvFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
 
+// Uncomment below if you prefer to
+// run test in parallel execution mode
+// although it is not recommended
+//@Execution(ExecutionMode.CONCURRENT)
 public class BaseTest {
     private static WebDriver driver;
 
