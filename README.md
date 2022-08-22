@@ -13,7 +13,7 @@
 10. [Running testcases](https://github.com/nnson0310/Autotrader_selenium_automation_framework#running-testcases)
 11. [Parallel testing](https://github.com/nnson0310/Autotrader_selenium_automation_framework#parallel-testing)
 
-###Importan Note
+### Importan Note
 ````shell
 + Language binding is Java. Running stably with java version 11 (jdk 11.0.15)
 + This project uses latest selenium version 4.0.3
