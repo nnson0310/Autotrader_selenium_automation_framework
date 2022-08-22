@@ -2,7 +2,7 @@
 ````shell
 Important Note: 
 + Language binding is Java. Running stably with java version 11 (jdk 11.0.15)
-+ This project does not using latest selenium version. Using selenium version is 4.0.3
++ This project uses latest selenium version. Using selenium version is 4.0.3
 + Public domain using for test: https://www.autotrader.com.au/
 + Using maven build tools to manage dependencies and third-party libraries
 + Generate reports with allure report
