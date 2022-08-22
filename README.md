@@ -1,4 +1,18 @@
 ### Skeleton framework for autotrader domain (Selenium Java + Junit 5)
+
+## Table of Contents
+1. [Important Note](###important-note)
+2. [Special Features](###special-features)
+3. [Install](###install)
+4. [Listener Registration](###Logging)
+5. [Multiple environment running](###multiple-environment-running)
+6. [Record video](###record-video)
+7. [Allure Reports](###allure-reports)
+8. [Log4j2](###log4j2)
+9. [Data Management](###data-management)
+10. [Running testcases](###running-testcases)
+11. [Parallel testing](###parallel-testing)
+
 ````shell
 Important Note: 
 + Language binding is Java. Running stably with java version 11 (jdk 11.0.15)
