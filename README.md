@@ -2,31 +2,41 @@
 
 ## Table of Contents
 1. [Important Note](https://github.com/nnson0310/Autotrader_selenium_automation_framework#important-note)
-2. [Special Features](https://github.com/nnson0310/Autotrader_selenium_automation_framework#parallel-testing)
-3. [Install](https://github.com/nnson0310/Autotrader_selenium_automation_framework#parallel-testing)
-4. [Listener Registration](https://github.com/nnson0310/Autotrader_selenium_automation_framework#listener-registration)
-5. [Multiple environment running](https://github.com/nnson0310/Autotrader_selenium_automation_framework#multiple-environment-running)
-6. [Record video](https://github.com/nnson0310/Autotrader_selenium_automation_framework#record-video)
-7. [Allure Reports](https://github.com/nnson0310/Autotrader_selenium_automation_framework#allure-reports)
-8. [Log4j2](https://github.com/nnson0310/Autotrader_selenium_automation_framework#log4j2)
-9. [Data Management](https://github.com/nnson0310/Autotrader_selenium_automation_framework#data-management)
-10. [Running testcases](https://github.com/nnson0310/Autotrader_selenium_automation_framework#running-testcases)
-11. [Parallel testing](https://github.com/nnson0310/Autotrader_selenium_automation_framework#parallel-testing)
+2. [Features](https://github.com/nnson0310/Autotrader_selenium_automation_framework#features)
+3. [Project Structures](https://github.com/nnson0310/Autotrader_selenium_automation_framework#project-structures)
+4. [Install](https://github.com/nnson0310/Autotrader_selenium_automation_framework#install)
+5. [Listener Registration](https://github.com/nnson0310/Autotrader_selenium_automation_framework#listener-registration)
+6. [Multiple environment running](https://github.com/nnson0310/Autotrader_selenium_automation_framework#multiple-environment-running)
+7. [Record video](https://github.com/nnson0310/Autotrader_selenium_automation_framework#record-video)
+8. [Allure Reports](https://github.com/nnson0310/Autotrader_selenium_automation_framework#allure-reports)
+9. [Log4j2](https://github.com/nnson0310/Autotrader_selenium_automation_framework#log4j2)
+10. [Data Management](https://github.com/nnson0310/Autotrader_selenium_automation_framework#data-management)
+11. [Running testcases](https://github.com/nnson0310/Autotrader_selenium_automation_framework#running-testcases)
+12. [Parallel testing](https://github.com/nnson0310/Autotrader_selenium_automation_framework#parallel-testing)
 
 ### Importan Note
 ````shell
 + Language binding is Java. Running stably with java version 11 (jdk 11.0.15)
 + This project uses latest selenium version 4.0.3
-+ Public domain using for test: https://www.autotrader.com.au/ (***Important: Because test domain is product environment so test data can be invalid**)
++ Public domain using for test: https://www.autotrader.com.au/ (**Important: Because test domain is real domain so test data can be invalid. It can leads to failed testcase**)
 + Using maven build tools to manage dependencies and third-party libraries
 + Generate reports with allure report
 + Using Junit 5 as automation framework
 `````
-### Special Features
-+  Support demo running through local, selenium grid and cloud testing with proper configuration
+### Features
++  Support demo running through local, docker selenium and cloud testing with proper configuration
++  Generate report and log file.
 +  Support cross-browser testing: chrome, firefox, headless browser, opera, edge, safari....
 +  Auto record video when running testcases on local environment
 +  Auto save record video from BrowserStack through API call...and so on
++  Can be intergrated with CI-CD tools like Jenkins.
++  Register listeners through Service Provider mechanism
+
+### Project Structures
+This project has some main important components:
++ src folder: contains two packages (main + test). `Main packages` will contains many smaller packages which are mainly used for: Selenium API methods wrapping, init BrowserDriver, interfaces, custom exception, API call, enums, constants definition...In constrast, `Test packages` contains testcases.
++ resources folder: contains resources using for listener registration, properties files, test data files...
++ other folders as: browser driver, log4j, allure report...
 
 ### Install
 Clone project to your local device and run below maven command:
