@@ -17,7 +17,7 @@
 ````shell
 + Language binding is Java. Running stably with java version 11 (jdk 11.0.15)
 + This project uses latest selenium version 4.0.3
-+ Public domain using for test: https://www.autotrader.com.au/
++ Public domain using for test: https://www.autotrader.com.au/ (***Important: Because test domain is product environment so test data can be invalid**)
 + Using maven build tools to manage dependencies and third-party libraries
 + Generate reports with allure report
 + Using Junit 5 as automation framework
