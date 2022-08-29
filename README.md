@@ -18,19 +18,22 @@
 ````shell
 + Language binding is Java. Running stably with java version 11 (jdk 11.0.15)
 + This project uses latest selenium version 4.0.3
-+ Public domain using for test: https://www.autotrader.com.au/ (**Important: Because test domain is real domain so test data can be invalid. It can leads to failed testcase**)
++ Public domain using for test: https://www.autotrader.com.au/ 
 + Using maven build tools to manage dependencies and third-party libraries
 + Generate reports with allure report
 + Using Junit 5 as automation framework
 `````
+
+**Important**: Because test domain is real domain (production) so test data can be invalid when you run testcases. Update test data to run testcases stably if you need.
+
 ### Features
 +  Support demo running through local, docker selenium and cloud testing with proper configuration
 +  Generate report and log file.
 +  Support cross-browser testing: chrome, firefox, headless browser, opera, edge, safari....
 +  Auto record video when running testcases on local environment
-+  Auto save record video from BrowserStack through API call...and so on
++  Auto save record video from BrowserStack through API call
 +  Can be intergrated with CI-CD tools like Jenkins.
-+  Register listeners through Service Provider mechanism
++  Register listeners through Service Provider mechanism...and so on.
 
 ### Project Structures
 This project has some main important components:
@@ -46,9 +49,8 @@ mvn clean test
 ### Listener Registration
 Junit 5 support listener registration through [`ServiceLoader`](https://junit.org/junit5/docs/current/user-guide/#launcher-api-listeners-custom) mechanism of Java. Create your own listeners and declare it with `src/main/resources/META-INF/services`. Two default listeners are registered in `src/main/java/listeners`
 
-#### Multiple environment running:
-Support running on local device, docker grid and cloud testing platform (BrowserStack)
-Config `src/main/resources/environment.properties` file to adapt to your requirements:
+### Multiple environment running:
+Support running on local device, docker grid and cloud testing platform (BrowserStack). Config `src/main/resources/environment.properties` file to adapt to your requirements:
 + environment_name: valid value is `local, grid, docker`
 + browser_name, browser_version, os, os_version: config for `BrowserStack`
 + ip_address, port: config for docker grid (default port for selenium hub is `4444`)
