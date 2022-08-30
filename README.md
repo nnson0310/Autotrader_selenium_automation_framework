@@ -80,9 +80,9 @@ Screenshot will be attached to report when testcase is marked as failure (only a
 Config `src/test/resources/log4j2.xml` due to your requirements. Auto create `app.log` file in `log4j2` folder.
 
 ### Data Management
-Test data can be managed through many ways. Junit 5 supports data-driven testing with `@ParameterizedTest` annotation. All temporary testdata (at my running time) are stored in `src/test/resources/test_data/'. You can freely choose between csv or json file. 
-If you choose json files, test data must be mapped to Java Object using [Gson Library](https://mvnrepository.com/artifact/com.google.code.gson/gson)
-If you choose csv files, simply adding `@CsvFileSource(resources = "/path_to_csv_file", numLinesToSkip = 1)` below `@ParamerterizedTest` annotation
+Test data can be managed through many ways. Junit 5 supports data-driven testing with `@ParameterizedTest` annotation. All temporary testdata (at my running time) are stored in `src/test/resources/test_data/`. You can freely choose between csv or json file. 
++ If you choose json files, test data must be mapped to Java Object using [Gson Library](https://mvnrepository.com/artifact/com.google.code.gson/gson)
++ If you choose csv files, simply adding `@CsvFileSource(resources = "/path_to_csv_file", numLinesToSkip = 1)` below `@ParamerterizedTest` annotation
 
 ### Running testcases:
 Config `pom.xml`. Change `groups` tag corresponding to value of `@Tag` annotation
