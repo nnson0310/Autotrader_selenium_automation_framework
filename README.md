@@ -24,12 +24,13 @@
 + Using Junit 5 as automation framework
 `````
 
-**Important**: Because test domain is real domain (production) so test data can be invalid when you run testcases. Update test data to run testcases stably if you need.
+**Important**: Because domain using for test is real domain (production) so test data can be invalid at the moment you run testcases. All using data are temporarily invalid at the moment I run testscripts. Update test data if you need.
 
 ### Features
 +  Support demo running through local, docker selenium and cloud testing with proper configuration
 +  Generate report and log file.
 +  Support cross-browser testing: chrome, firefox, headless browser, opera, edge, safari....
++  Generate allure report with attached screenshot at failed step (only failed step)
 +  Auto record video when running testcases on local environment
 +  Auto save record video from BrowserStack through API call
 +  Can be intergrated with CI-CD tools like Jenkins.
@@ -44,6 +45,7 @@ This project has some main important components:
 ### Install
 Clone project to your local device and run below maven command:
 ```sh
+mvn install
 mvn clean test 
 ```
 ### Listener Registration
@@ -72,13 +74,15 @@ mvn clean test allure:report
 or
 mvn clean test allure:serve
 ```
-Config environment parameters for allure reports with `src/main/resources/project.properties`
-
+Config environment parameters for allure reports with `src/main/resources/project.properties`.
+Screenshot will be attached to report when testcase is marked as failure (only at failed test step). Screenshot will be automatically saved as png image.
 ### Log4j2
 Config `src/test/resources/log4j2.xml` due to your requirements. Auto create `app.log` file in `log4j2` folder.
 
 ### Data Management
-Data test can be managed through many ways. Junit 5 support csv and ParameterTest annotation. Also using json files if you need.
+Test data can be managed through many ways. Junit 5 supports data-driven testing with `@ParameterizedTest` annotation. All temporary testdata (at my running time) are stored in `src/test/resources/test_data/'. You can freely choose between csv or json file. 
+If you choose json files, test data must be mapped to Java Object using [Gson Library](https://mvnrepository.com/artifact/com.google.code.gson/gson)
+If you choose csv files, simply adding `@CsvFileSource(resources = "/path_to_csv_file", numLinesToSkip = 1)` below `@ParamerterizedTest` annotation
 
 ### Running testcases:
 Config `pom.xml`. Change `groups` tag corresponding to value of `@Tag` annotation
